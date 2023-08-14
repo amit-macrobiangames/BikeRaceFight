@@ -1,0 +1,149 @@
+fileFormatVersion: 2
+guid: f387eef9603a94144a7de24ee691f3f9
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Truck_Chrome
+    100004: Truck_Color01
+    100006: Truck_Color02
+    100008: Truck_Color03
+    100010: Truck_Light
+    100012: truck_wheel_front_left01
+    100014: truck_wheel_front_right01
+    100016: truck_wheel_rear_left01
+    100018: truck_wheel_rear_left02
+    100020: truck_wheel_rear_right01
+    100022: truck_wheel_rear_right02
+    100024: Truck_Win
+    400000: //RootNode
+    400002: Truck_Chrome
+    400004: Truck_Color01
+    400006: Truck_Color02
+    400008: Truck_Color03
+    400010: Truck_Light
+    400012: truck_wheel_front_left01
+    400014: truck_wheel_front_right01
+    400016: truck_wheel_rear_left01
+    400018: truck_wheel_rear_left02
+    400020: truck_wheel_rear_right01
+    400022: truck_wheel_rear_right02
+    400024: Truck_Win
+    2300000: Truck_Chrome
+    2300002: Truck_Color01
+    2300004: Truck_Color02
+    2300006: Truck_Color03
+    2300008: Truck_Light
+    2300010: truck_wheel_front_left01
+    2300012: truck_wheel_front_right01
+    2300014: truck_wheel_rear_left01
+    2300016: truck_wheel_rear_left02
+    2300018: truck_wheel_rear_right01
+    2300020: truck_wheel_rear_right02
+    2300022: Truck_Win
+    3300000: Truck_Chrome
+    3300002: Truck_Color01
+    3300004: Truck_Color02
+    3300006: Truck_Color03
+    3300008: Truck_Light
+    3300010: truck_wheel_front_left01
+    3300012: truck_wheel_front_right01
+    3300014: truck_wheel_rear_left01
+    3300016: truck_wheel_rear_left02
+    3300018: truck_wheel_rear_right01
+    3300020: truck_wheel_rear_right02
+    3300022: Truck_Win
+    4300000: truck_wheel_rear_right01
+    4300002: Truck_Color01
+    4300004: truck_wheel_front_right01
+    4300006: Truck_Chrome
+    4300008: Truck_Light
+    4300010: Truck_Color02
+    4300012: Truck_Win
+    4300014: Truck_Color03
+    4300016: truck_wheel_rear_right02
+    4300018: truck_wheel_front_left01
+    4300020: truck_wheel_rear_left02
+    4300022: truck_wheel_rear_left01
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 2
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

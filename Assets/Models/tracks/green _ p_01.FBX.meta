@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: 015c68f1ea0b52a48b735268ac20bf1b
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Cylinder006
+    100002: Cylinder009
+    100004: Cylinder011
+    100006: greels_002
+    100008: greels_003
+    100010: greels_004
+    100012: greels_005
+    100014: greels_006
+    100016: greels_007
+    100018: greels_008
+    100020: greels_009
+    100022: greels_01
+    100024: greels_010
+    100026: greels_011
+    100028: greels_012
+    100030: greels_013
+    100032: greels_014
+    100034: greels_015
+    100036: greels_016
+    100038: greels_017
+    100040: greels_018
+    100042: //RootNode
+    100044: Line001
+    100046: Object001
+    100048: Object002
+    100050: Object020
+    100052: Object025
+    100054: Object031
+    100056: Object033
+    100058: Object034
+    100060: Object035
+    100062: Object036
+    100064: Object040
+    100066: Object041
+    100068: Object042
+    100070: Object043
+    100072: Object044
+    100074: Object268
+    100076: Object271
+    100078: Object273
+    100080: Object275
+    100082: Object278
+    100084: Object279
+    100086: Object280
+    100088: Object281
+    100090: Object387
+    100092: Object388
+    100094: Object556
+    100096: Object557
+    100098: plan_1
+    100100: plan_3
+    100102: roads_02
+    400000: Cylinder006
+    400002: Cylinder009
+    400004: Cylinder011
+    400006: greels_002
+    400008: greels_003
+    400010: greels_004
+    400012: greels_005
+    400014: greels_006
+    400016: greels_007
+    400018: greels_008
+    400020: greels_009
+    400022: greels_01
+    400024: greels_010
+    400026: greels_011
+    400028: greels_012
+    400030: greels_013
+    400032: greels_014
+    400034: greels_015
+    400036: greels_016
+    400038: greels_017
+    400040: greels_018
+    400042: //RootNode
+    400044: Line001
+    400046: Object001
+    400048: Object002
+    400050: Object020
+    400052: Object025
+    400054: Object031
+    400056: Object033
+    400058: Object034
+    400060: Object035
+    400062: Object036
+    400064: Object040
+    400066: Object041
+    400068: Object042
+    400070: Object043
+    400072: Object044
+    400074: Object268
+    400076: Object271
+    400078: Object273
+    400080: Object275
+    400082: Object278
+    400084: Object279
+    400086: Object280
+    400088: Object281
+    400090: Object387
+    400092: Object388
+    400094: Object556
+    400096: Object557
+    400098: plan_1
+    400100: plan_3
+    400102: roads_02
+    2300000: Cylinder006
+    2300002: Cylinder009
+    2300004: Cylinder011
+    2300006: greels_002
+    2300008: greels_003
+    2300010: greels_004
+    2300012: greels_005
+    2300014: greels_006
+    2300016: greels_007
+    2300018: greels_008
+    2300020: greels_009
+    2300022: greels_01
+    2300024: greels_010
+    2300026: greels_011
+    2300028: greels_012
+    2300030: greels_013
+    2300032: greels_014
+    2300034: greels_015
+    2300036: greels_016
+    2300038: greels_017
+    2300040: greels_018
+    2300042: Line001
+    2300044: Object002
+    2300046: Object020
+    2300048: Object025
+    2300050: Object031
+    2300052: Object033
+    2300054: Object035
+    2300056: Object036
+    2300058: Object040
+    2300060: Object041
+    2300062: Object042
+    2300064: Object043
+    2300066: Object044
+    2300068: Object268
+    2300070: Object271
+    2300072: Object273
+    2300074: Object275
+    2300076: Object278
+    2300078: Object279
+    2300080: Object280
+    2300082: Object281
+    2300084: Object387
+    2300086: Object388
+    2300088: Object556
+    2300090: Object557
+    2300092: plan_1
+    2300094: plan_3
+    2300096: roads_02
+    3300000: Cylinder006
+    3300002: Cylinder009
+    3300004: Cylinder011
+    3300006: greels_002
+    3300008: greels_003
+    3300010: greels_004
+    3300012: greels_005
+    3300014: greels_006
+    3300016: greels_007
+    3300018: greels_008
+    3300020: greels_009
+    3300022: greels_01
+    3300024: greels_010
+    3300026: greels_011
+    3300028: greels_012
+    3300030: greels_013
+    3300032: greels_014
+    3300034: greels_015
+    3300036: greels_016
+    3300038: greels_017
+    3300040: greels_018
+    3300042: Line001
+    3300044: Object002
+    3300046: Object020
+    3300048: Object025
+    3300050: Object031
+    3300052: Object033
+    3300054: Object035
+    3300056: Object036
+    3300058: Object040
+    3300060: Object041
+    3300062: Object042
+    3300064: Object043
+    3300066: Object044
+    3300068: Object268
+    3300070: Object271
+    3300072: Object273
+    3300074: Object275
+    3300076: Object278
+    3300078: Object279
+    3300080: Object280
+    3300082: Object281
+    3300084: Object387
+    3300086: Object388
+    3300088: Object556
+    3300090: Object557
+    3300092: plan_1
+    3300094: plan_3
+    3300096: roads_02
+    4300000: Object002
+    4300002: plan_1
+    4300004: plan_3
+    4300006: greels_01
+    4300008: Cylinder006
+    4300010: Cylinder009
+    4300012: roads_02
+    4300014: Object020
+    4300016: Object025
+    4300018: greels_002
+    4300020: greels_003
+    4300022: greels_004
+    4300024: greels_005
+    4300026: greels_006
+    4300028: greels_007
+    4300030: greels_008
+    4300032: greels_009
+    4300034: greels_010
+    4300036: greels_011
+    4300038: greels_012
+    4300040: greels_013
+    4300042: greels_014
+    4300044: greels_015
+    4300046: greels_016
+    4300048: greels_017
+    4300050: greels_018
+    4300052: Line001
+    4300054: Cylinder011
+    4300056: Object031
+    4300058: Object033
+    4300060: Object035
+    4300062: Object036
+    4300064: Object040
+    4300066: Object041
+    4300068: Object042
+    4300070: Object043
+    4300072: Object044
+    4300074: Object268
+    4300076: Object271
+    4300078: Object273
+    4300080: Object275
+    4300082: Object278
+    4300084: Object279
+    4300086: Object280
+    4300088: Object281
+    4300090: Object387
+    4300092: Object388
+    4300094: Object556
+    4300096: Object557
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #6349'
+    second: {fileID: 2100000, guid: b6aba73431711cf4f9ee20ed6344b616, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7843'
+    second: {fileID: 2100000, guid: e3729b09a7952ed47ae3c8900476fe0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7844'
+    second: {fileID: 2100000, guid: e3729b09a7952ed47ae3c8900476fe0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7845'
+    second: {fileID: 2100000, guid: e3729b09a7952ed47ae3c8900476fe0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7846'
+    second: {fileID: 2100000, guid: e3729b09a7952ed47ae3c8900476fe0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7858'
+    second: {fileID: 2100000, guid: e3729b09a7952ed47ae3c8900476fe0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7870'
+    second: {fileID: 2100000, guid: e3729b09a7952ed47ae3c8900476fe0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7882'
+    second: {fileID: 2100000, guid: e3729b09a7952ed47ae3c8900476fe0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7894'
+    second: {fileID: 2100000, guid: b6aba73431711cf4f9ee20ed6344b616, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7918'
+    second: {fileID: 2100000, guid: b6aba73431711cf4f9ee20ed6344b616, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7930'
+    second: {fileID: 2100000, guid: b6aba73431711cf4f9ee20ed6344b616, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7954'
+    second: {fileID: 2100000, guid: b6aba73431711cf4f9ee20ed6344b616, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7966'
+    second: {fileID: 2100000, guid: e3729b09a7952ed47ae3c8900476fe0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7978'
+    second: {fileID: 2100000, guid: e3729b09a7952ed47ae3c8900476fe0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7990'
+    second: {fileID: 2100000, guid: e3729b09a7952ed47ae3c8900476fe0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8005'
+    second: {fileID: 2100000, guid: 5781f4ca4ed9a0b4297316cc05a24e36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8007'
+    second: {fileID: 2100000, guid: 2c235c5c564f0cb468d6cfdfba00a0ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8009'
+    second: {fileID: 2100000, guid: 34f9a41d79b50954eb6e29f71474d88a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8113'
+    second: {fileID: 2100000, guid: 0a648bed190545a4d889dd4c31f7c3ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8114'
+    second: {fileID: 2100000, guid: 0a648bed190545a4d889dd4c31f7c3ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8126'
+    second: {fileID: 2100000, guid: 0a648bed190545a4d889dd4c31f7c3ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8138'
+    second: {fileID: 2100000, guid: 0a648bed190545a4d889dd4c31f7c3ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8139'
+    second: {fileID: 2100000, guid: 0a648bed190545a4d889dd4c31f7c3ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8152'
+    second: {fileID: 2100000, guid: 0a648bed190545a4d889dd4c31f7c3ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8188'
+    second: {fileID: 2100000, guid: 0a648bed190545a4d889dd4c31f7c3ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8225'
+    second: {fileID: 2100000, guid: 0a648bed190545a4d889dd4c31f7c3ae, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

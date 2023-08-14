@@ -1,0 +1,29 @@
+ 000 - 050   mount-bike
+ 050 - 090   leave-bike
+ 100 - 200   Idle-b
+ 200 - 260   start-enigine
+ 260 - 280   stop-enigine
+ 280 - 340   drive-start
+ 320 - 340   drive-loop
+ 340 - 380   drive-end
+ 390 - 450   drive-left
+ 450 - 510   drive-right
+ 510 - 570   drive-act-1
+ 570 - 600   drive-act-2
+ 600 - 660   drive-kick1
+ 660 - 720   drive-kick2
+ 720 - 750   drive-hit1
+ 750 - 780   drive-hit2
+ 790 - 810   drive-nitro
+ 820 - 910   extra-stop
+ 920 - 1000  backwards
+1010 - 1075  crash
+1075 - 1530  drive-crash-standup
+1530 - 1710  360 drift circle
+1720 - 1820  whellie
+1830 - 1930  drift
+1930 - 2130  ride
+2130 - 2210  stoppie 180
+2210 - 2270  180 drift
+2280 - 2370  trick 1
+          

@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: b907f4bdce7d288478a886b81c91463a
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Cylinder037
+    100002: Cylinder038
+    100004: Object459
+    100006: Object669
+    100008: Object670
+    100010: Object671
+    100012: Object672
+    100014: Object695
+    100016: Object696
+    100018: Object697
+    100020: Object698
+    100022: Object709
+    100024: Object710
+    100026: Object711
+    100028: Object712
+    100030: Object749
+    100032: Object756
+    100034: Object757
+    100036: road 2
+    100038: //RootNode
+    400000: Cylinder037
+    400002: Cylinder038
+    400004: Object459
+    400006: Object669
+    400008: Object670
+    400010: Object671
+    400012: Object672
+    400014: Object695
+    400016: Object696
+    400018: Object697
+    400020: Object698
+    400022: Object709
+    400024: Object710
+    400026: Object711
+    400028: Object712
+    400030: Object749
+    400032: Object756
+    400034: Object757
+    400036: road 2
+    400038: //RootNode
+    2300000: Cylinder037
+    2300002: Cylinder038
+    2300004: Object459
+    2300006: Object669
+    2300008: Object670
+    2300010: Object671
+    2300012: Object672
+    2300014: Object695
+    2300016: Object696
+    2300018: Object697
+    2300020: Object698
+    2300022: Object709
+    2300024: Object710
+    2300026: Object711
+    2300028: Object712
+    2300030: Object756
+    2300032: Object757
+    2300034: road 2
+    3300000: Cylinder037
+    3300002: Cylinder038
+    3300004: Object459
+    3300006: Object669
+    3300008: Object670
+    3300010: Object671
+    3300012: Object672
+    3300014: Object695
+    3300016: Object696
+    3300018: Object697
+    3300020: Object698
+    3300022: Object709
+    3300024: Object710
+    3300026: Object711
+    3300028: Object712
+    3300030: Object756
+    3300032: Object757
+    3300034: road 2
+    4300000: Object459
+    4300002: Object669
+    4300004: Object670
+    4300006: Object671
+    4300008: Object672
+    4300010: Object695
+    4300012: Object696
+    4300014: Object697
+    4300016: Object698
+    4300018: Object709
+    4300020: Object710
+    4300022: Object711
+    4300024: Object712
+    4300026: Cylinder037
+    4300028: Cylinder038
+    4300030: Object756
+    4300032: Object757
+    4300034: road 2
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #10613'
+    second: {fileID: 2100000, guid: b3d8b731f46f5a146a44e646c7ef7b75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #11153'
+    second: {fileID: 2100000, guid: 745ce9820fdab8545923101523ba93bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #11166'
+    second: {fileID: 2100000, guid: 745ce9820fdab8545923101523ba93bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #11178'
+    second: {fileID: 2100000, guid: 85ceae26753795c418e84b9a3e58fabd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #11179'
+    second: {fileID: 2100000, guid: 85ceae26753795c418e84b9a3e58fabd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7843'
+    second: {fileID: 2100000, guid: 745ce9820fdab8545923101523ba93bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8005'
+    second: {fileID: 2100000, guid: ff8d9405d0eeff94da10633ca9f73c49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8009'
+    second: {fileID: 2100000, guid: 85ceae26753795c418e84b9a3e58fabd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8010'
+    second: {fileID: 2100000, guid: 745ce9820fdab8545923101523ba93bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8023'
+    second: {fileID: 2100000, guid: 745ce9820fdab8545923101523ba93bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8279'
+    second: {fileID: 2100000, guid: 40550f1a0d94da74fa0e84ace882ab32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #9727'
+    second: {fileID: 2100000, guid: 6cfb381403bd1f044a8b0ca86b0441aa, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

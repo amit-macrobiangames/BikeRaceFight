@@ -1,0 +1,502 @@
+fileFormatVersion: 2
+guid: 1c81cd06ddf8d3e4aa35dfbaa43fc0ce
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Cylinder032
+    100002: Cylinder033
+    100004: Cylinder034
+    100006: Object565
+    100008: Object568
+    100010: Object569
+    100012: Object575
+    100014: Object582
+    100016: Object583
+    100018: Object584
+    100020: Object589
+    100022: Object595
+    100024: Object603
+    100026: Object606
+    100028: Object607
+    100030: Object609
+    100032: Object626
+    100034: Object627
+    100036: Object632
+    100038: Object645
+    100040: Object650
+    100042: Object652
+    100044: Object656
+    100046: Object677
+    100048: Object678
+    100050: Object679
+    100052: Object680
+    100054: Object681
+    100056: Object682
+    100058: Object683
+    100060: Object684
+    100062: Object685
+    100064: Object686
+    100066: Object687
+    100068: Object688
+    100070: Object735
+    100072: Object736
+    100074: Object738
+    100076: Object739
+    100078: Object740
+    100080: Object741
+    100082: Object742
+    100084: Object780
+    100086: Object781
+    100088: road 4
+    100090: //RootNode
+    100092: tree_135
+    100094: tree_137
+    100096: tree_138
+    100098: tree_145
+    100100: tree_146
+    100102: tree_147
+    100104: tree_148
+    100106: tree_149
+    100108: tree_150
+    100110: tree_151
+    100112: tree_152
+    100114: tree_153
+    100116: wagen1_Lp_001
+    400000: Cylinder032
+    400002: Cylinder033
+    400004: Cylinder034
+    400006: Object565
+    400008: Object568
+    400010: Object569
+    400012: Object575
+    400014: Object582
+    400016: Object583
+    400018: Object584
+    400020: Object589
+    400022: Object595
+    400024: Object603
+    400026: Object606
+    400028: Object607
+    400030: Object609
+    400032: Object626
+    400034: Object627
+    400036: Object632
+    400038: Object645
+    400040: Object650
+    400042: Object652
+    400044: Object656
+    400046: Object677
+    400048: Object678
+    400050: Object679
+    400052: Object680
+    400054: Object681
+    400056: Object682
+    400058: Object683
+    400060: Object684
+    400062: Object685
+    400064: Object686
+    400066: Object687
+    400068: Object688
+    400070: Object735
+    400072: Object736
+    400074: Object738
+    400076: Object739
+    400078: Object740
+    400080: Object741
+    400082: Object742
+    400084: Object780
+    400086: Object781
+    400088: road 4
+    400090: //RootNode
+    400092: tree_135
+    400094: tree_137
+    400096: tree_138
+    400098: tree_145
+    400100: tree_146
+    400102: tree_147
+    400104: tree_148
+    400106: tree_149
+    400108: tree_150
+    400110: tree_151
+    400112: tree_152
+    400114: tree_153
+    400116: wagen1_Lp_001
+    2300000: Cylinder032
+    2300002: Cylinder033
+    2300004: Cylinder034
+    2300006: Object565
+    2300008: Object568
+    2300010: Object569
+    2300012: Object575
+    2300014: Object582
+    2300016: Object583
+    2300018: Object584
+    2300020: Object589
+    2300022: Object595
+    2300024: Object603
+    2300026: Object606
+    2300028: Object607
+    2300030: Object626
+    2300032: Object627
+    2300034: Object632
+    2300036: Object645
+    2300038: Object650
+    2300040: Object652
+    2300042: Object656
+    2300044: Object677
+    2300046: Object678
+    2300048: Object679
+    2300050: Object680
+    2300052: Object681
+    2300054: Object682
+    2300056: Object683
+    2300058: Object684
+    2300060: Object685
+    2300062: Object686
+    2300064: Object687
+    2300066: Object688
+    2300068: Object735
+    2300070: Object736
+    2300072: Object738
+    2300074: Object739
+    2300076: Object740
+    2300078: Object741
+    2300080: Object742
+    2300082: Object780
+    2300084: Object781
+    2300086: road 4
+    2300088: tree_135
+    2300090: tree_137
+    2300092: tree_138
+    2300094: tree_145
+    2300096: tree_146
+    2300098: tree_147
+    2300100: tree_148
+    2300102: tree_149
+    2300104: tree_150
+    2300106: tree_151
+    2300108: tree_152
+    2300110: tree_153
+    2300112: wagen1_Lp_001
+    3300000: Cylinder032
+    3300002: Cylinder033
+    3300004: Cylinder034
+    3300006: Object565
+    3300008: Object568
+    3300010: Object569
+    3300012: Object575
+    3300014: Object582
+    3300016: Object583
+    3300018: Object584
+    3300020: Object589
+    3300022: Object595
+    3300024: Object603
+    3300026: Object606
+    3300028: Object607
+    3300030: Object626
+    3300032: Object627
+    3300034: Object632
+    3300036: Object645
+    3300038: Object650
+    3300040: Object652
+    3300042: Object656
+    3300044: Object677
+    3300046: Object678
+    3300048: Object679
+    3300050: Object680
+    3300052: Object681
+    3300054: Object682
+    3300056: Object683
+    3300058: Object684
+    3300060: Object685
+    3300062: Object686
+    3300064: Object687
+    3300066: Object688
+    3300068: Object735
+    3300070: Object736
+    3300072: Object738
+    3300074: Object739
+    3300076: Object740
+    3300078: Object741
+    3300080: Object742
+    3300082: Object780
+    3300084: Object781
+    3300086: road 4
+    3300088: tree_135
+    3300090: tree_137
+    3300092: tree_138
+    3300094: tree_145
+    3300096: tree_146
+    3300098: tree_147
+    3300100: tree_148
+    3300102: tree_149
+    3300104: tree_150
+    3300106: tree_151
+    3300108: tree_152
+    3300110: tree_153
+    3300112: wagen1_Lp_001
+    4300000: Object565
+    4300002: Object568
+    4300004: Object569
+    4300006: Object575
+    4300008: Object582
+    4300010: Object583
+    4300012: Object584
+    4300014: Object589
+    4300016: Cylinder032
+    4300018: Object595
+    4300020: Object603
+    4300022: Object606
+    4300024: Object607
+    4300026: Cylinder033
+    4300028: Cylinder034
+    4300030: Object626
+    4300032: Object627
+    4300034: Object632
+    4300036: wagen1_Lp_001
+    4300038: Object645
+    4300040: Object650
+    4300042: Object652
+    4300044: Object656
+    4300046: Object677
+    4300048: Object678
+    4300050: Object679
+    4300052: Object680
+    4300054: Object681
+    4300056: Object682
+    4300058: Object683
+    4300060: Object684
+    4300062: Object685
+    4300064: Object686
+    4300066: Object687
+    4300068: Object688
+    4300070: tree_135
+    4300072: tree_137
+    4300074: tree_138
+    4300076: tree_145
+    4300078: tree_146
+    4300080: tree_147
+    4300082: Object735
+    4300084: Object736
+    4300086: Object738
+    4300088: Object739
+    4300090: Object740
+    4300092: Object741
+    4300094: Object742
+    4300096: tree_148
+    4300098: tree_149
+    4300100: tree_150
+    4300102: tree_151
+    4300104: tree_152
+    4300106: tree_153
+    4300108: road 4
+    4300110: Object780
+    4300112: Object781
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02 - Default
+    second: {fileID: 2100000, guid: cb70008c9c46c6540b622905812494af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 03 - Default
+    second: {fileID: 2100000, guid: e663af4d28ae8dc4fa23a29a9c5714cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 04 - Default
+    second: {fileID: 2100000, guid: d29c5c253cf6f2b45a68340a94c0242a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 23 - Default
+    second: {fileID: 2100000, guid: 68e654a826e255c469b4939b5b30c933, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #10013'
+    second: {fileID: 2100000, guid: 6cfb381403bd1f044a8b0ca86b0441aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #10025'
+    second: {fileID: 2100000, guid: 6cfb381403bd1f044a8b0ca86b0441aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #10037'
+    second: {fileID: 2100000, guid: 6cfb381403bd1f044a8b0ca86b0441aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #10105'
+    second: {fileID: 2100000, guid: 6cfb381403bd1f044a8b0ca86b0441aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #10117'
+    second: {fileID: 2100000, guid: 6cfb381403bd1f044a8b0ca86b0441aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #10497'
+    second: {fileID: 2100000, guid: b3d8b731f46f5a146a44e646c7ef7b75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #10510'
+    second: {fileID: 2100000, guid: b3d8b731f46f5a146a44e646c7ef7b75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #10511'
+    second: {fileID: 2100000, guid: b3d8b731f46f5a146a44e646c7ef7b75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #11689'
+    second: {fileID: 2100000, guid: afecf6c123a227a4dba364f41eb3913e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #11747'
+    second: {fileID: 2100000, guid: 745ce9820fdab8545923101523ba93bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #6349'
+    second: {fileID: 2100000, guid: b3d8b731f46f5a146a44e646c7ef7b75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8005'
+    second: {fileID: 2100000, guid: ff8d9405d0eeff94da10633ca9f73c49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8009'
+    second: {fileID: 2100000, guid: 85ceae26753795c418e84b9a3e58fabd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8010'
+    second: {fileID: 2100000, guid: 745ce9820fdab8545923101523ba93bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8112'
+    second: {fileID: 2100000, guid: 745ce9820fdab8545923101523ba93bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8212'
+    second: {fileID: 2100000, guid: 411351a6d26d2d24197d08ea2c1ddad9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #8684'
+    second: {fileID: 2100000, guid: ebb0cba96190cbf4bb1d84e5b24c26e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #9643'
+    second: {fileID: 2100000, guid: afecf6c123a227a4dba364f41eb3913e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #9728'
+    second: {fileID: 2100000, guid: 6cfb381403bd1f044a8b0ca86b0441aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #9730'
+    second: {fileID: 2100000, guid: 2dc2654d74e2f734dba6acb5b5471dce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _tractortractor
+    second: {fileID: 2100000, guid: 341e1632bbd7b2344bc7d0260d493bba, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
