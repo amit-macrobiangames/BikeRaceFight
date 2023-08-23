@@ -23,12 +23,19 @@ public class heliMissileScript : MonoBehaviour {
 		Invoke ("followPlayerOff",1f);
 		levelID = PlayerPrefs.GetInt ("levels");
 		if (levelID == 15) {
-						speed = 40;
-						Invoke ("followPlayerOff", 0.75f);
-				} else if (levelID == 16 || levelID == 17 || levelID == 19 || levelID == 20) {
-						speed = 80;
-			Invoke ("followPlayerOff", 0.35f);
-				}
+			speed = 35;
+			Invoke("followPlayerOff", 0.75f);
+		} 
+		else if (levelID == 16 || levelID == 17) 
+		{
+			speed = 40;
+			Invoke("followPlayerOff", 0.65f);
+		}
+		else if(levelID == 19 || levelID == 20)
+		{
+			speed = 40;
+			Invoke("followPlayerOff", 0.75f);
+        }
 	
 	}
 	void followPlayerOff(){

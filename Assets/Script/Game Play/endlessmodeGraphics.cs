@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class endlessmodeGraphics : MonoBehaviour
 {
+    //Add new UI
+    public static bool OnHome = false;
     public static endlessmodeGraphics instance;
     public GameObject statsPanel;
     public Text coins, coinCash, gamePlayCoins;
@@ -429,7 +431,7 @@ public class endlessmodeGraphics : MonoBehaviour
         bikeSelection.backToMode = true;
 
         SceneManager.LoadScene("bikeSelectLevel 2");
-        
+        OnHome = true;
     }
 
     public void gameOverFtn()

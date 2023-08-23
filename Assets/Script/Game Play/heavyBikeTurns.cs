@@ -66,7 +66,7 @@ private static int motor_power;
 		coinCash = 0;
 		activateShield = false;
 		opponentCrashedCash = 0;
-		if (PlayerPrefs.GetInt ("levels") == 7 || PlayerPrefs.GetInt ("levels") == 8 || PlayerPrefs.GetInt ("levels") == 11 || PlayerPrefs.GetInt("levels")==12 || PlayerPrefs.GetInt ("levels") == 15 || PlayerPrefs.GetInt("levels")==16) {
+		if (PlayerPrefs.GetInt ("levels") == 7 || PlayerPrefs.GetInt ("levels") == 8 || PlayerPrefs.GetInt ("levels") == 11 || PlayerPrefs.GetInt("levels")==12 || PlayerPrefs.GetInt ("levels") == 15 || PlayerPrefs.GetInt("levels")==16 || PlayerPrefs.GetInt("levels")==17 || PlayerPrefs.GetInt("levels")==18 || PlayerPrefs.GetInt("levels")==19 || PlayerPrefs.GetInt("levels")==20) {
 						shieldOn = true;	
 						shieldCounter = 3;
 						shieldEffect.SetActive (true);

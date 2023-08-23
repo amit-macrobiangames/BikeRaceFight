@@ -46,7 +46,7 @@ public class playerHealthBar : MonoBehaviour
     }
     float GetTargetPosition()
     {
-        float[] pos = new float[] { 0, -300, -250, -200, -150, -100, -50, -410, 200, 250, 300, 350, 450, 550, 650, 750, 750, 750, 800, 800 };
+        float[] pos = new float[] { 0, -300, -250, -200, -150, -100, -50, -410, 200, 250, 300, 350, 450, 550, 650, 750, 750, 750, 500, 700, 900};
 #if UNITY_EDITOR
         Debug.Log("Distance: " + pos[PlayerPrefs.GetInt("levels")]);
 #endif

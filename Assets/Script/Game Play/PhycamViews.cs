@@ -947,7 +947,7 @@ public class PhycamViews : MonoBehaviour
             {
                 if (!slowingDown && !heavyBikeTurns.boostbool)
                 {
-                    if (PlayerPrefs.GetInt("timers") > 0)
+                    if (PlayerPrefs.GetInt("timers") >= 0)
                     {
 
                         PlayerPrefs.SetInt("boost/timerUsed", (PlayerPrefs.GetInt("boost/timerUsed") + 1));

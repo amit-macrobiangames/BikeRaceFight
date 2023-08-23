@@ -98,14 +98,14 @@ public class levelScript : MonoBehaviour
             selectedImg.rectTransform.anchoredPosition = new Vector2(0, 0);
 
 
-        if (PlayerPrefs.GetString("level" + level + "Unlocked").Equals("true"))
-        {
-            playBtn.interactable = true;
-        }
-        else
-        {
-            playBtn.interactable = false;
-        }
+        //if (PlayerPrefs.GetString("level" + level + "Unlocked").Equals("true"))
+        //{
+        //    playBtn.interactable = true;
+        //}
+        //else
+        //{
+        //    playBtn.interactable = false;
+        //}
 
     }
     public void LetsGo()

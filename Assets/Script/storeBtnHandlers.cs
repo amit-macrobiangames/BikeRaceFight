@@ -140,6 +140,14 @@ public class storeBtnHandlers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Added
+        if(endlessmodeGraphics.OnHome)
+        {
+            foreach (GameObject go in NewMainMenu)
+            {
+                go.SetActive(false);
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape) && warningBox.activeInHierarchy)
         {
