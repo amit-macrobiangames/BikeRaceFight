@@ -508,8 +508,47 @@ public class heavyBikeTurnControls : MonoBehaviour {
 	
 	void Update()
 	{
-		
-		
+
+		//Add New Control Left Punch
+
+		if (!player.root.GetComponent<heavyBikeTurns>().flyoverStart && !player.root.GetComponent<heavyBikeTurns>().isJumping && !transform.root.GetComponent<weaponAI>().isAttacking && Input.GetKey(KeyCode.J))
+		{
+			if (punchOnce)
+			{
+				if (PhycamViews.counter == 11 || PhycamViews.counter == 12)
+				{
+					PhycamViews.counter = 2;
+					mainCamera.changeCamView();
+				}
+				leftPunchbool = true;
+				punchOnce = false;
+				Invoke("setter", 1f);
+
+			}
+		}
+
+		//Add New Control Right Punch
+
+		if (!player.root.GetComponent<heavyBikeTurns>().isJumping && !player.root.GetComponent<heavyBikeTurns>().flyoverStart && !transform.root.GetComponent<weaponAI>().isAttacking && Input.GetKey(KeyCode.K))
+		{
+			if (PhycamViews.counter == 11 || PhycamViews.counter == 12)
+			{
+				PhycamViews.counter = 2;
+				mainCamera.changeCamView();
+			}
+			if (attackOnce)
+			{
+				leftAttackbool = true;
+				attackOnce = false;
+				Invoke("setter", 1f);
+			}
+		}
+
+
+
+
+
+
 		//		if (staminaBarCollision) {
 		//			if(staminaBarCounter<endlessmodeGraphics.INITIAL_HEALTH)
 		//			{
@@ -520,7 +559,7 @@ public class heavyBikeTurnControls : MonoBehaviour {
 		//			staminaBarCollision=false;
 		//			
 		//		}
-		
+
 		//		
 		//		if (staminaBarCounter == 0) {
 		//			myTimer -= Time.deltaTime;
@@ -535,7 +574,7 @@ public class heavyBikeTurnControls : MonoBehaviour {
 		//			else
 		//				script.staminaBar= Resources.Load<Texture2D>("staminabr-red_BG");
 		//		}
-		
+
 		if (timeover) {
 			raceSound.SetActive(false);
 			

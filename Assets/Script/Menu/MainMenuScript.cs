@@ -7,6 +7,11 @@ using UnityEngine.Analytics;
 
 public class MainMenuScript : MonoBehaviour
 {
+    // New GUI Add
+    public GameObject MainMenu;
+    public Text[] UpdateCashText;
+
+    //Old GUI
     public static MainMenuScript Instance;
     public GameObject dailyBonusPanel, morePanel, bgImage;
     public GameObject ticketStore, spinner, insufficientTicketPanel;
@@ -113,7 +118,7 @@ public class MainMenuScript : MonoBehaviour
         if (settingPanelActive)
         {
             settingPanelActive = false;
-            settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
+            //settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
             Invoke("HideSetting", 0.667f);
         }
 
@@ -180,6 +185,10 @@ public class MainMenuScript : MonoBehaviour
     void Start()
     {
         Instance = this;
+        foreach(Text t in UpdateCashText)
+        {
+            t.text = cashText.text;
+        }
         Time.timeScale = 1;
         if (!PlayerPrefs.HasKey("Remove_ads"))
         {
@@ -335,7 +344,7 @@ public class MainMenuScript : MonoBehaviour
             if (settingPanelActive)
             {
                 settingPanelActive = false;
-                settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
+               // settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
                 Invoke("HideSetting", 0.667f);
             }
 
@@ -351,6 +360,10 @@ public class MainMenuScript : MonoBehaviour
     float xPosition;
     void Update()
     {
+        foreach (Text t in UpdateCashText)
+        {
+            t.text = cashText.text;
+        }
         // PlayerPrefs.DeleteAll();
         //		if (!PlayerPrefs.HasKey("lastPlayed") || PlayerPrefs.GetString ("lastPlayed") != System.String.Empty) {
         //						resetSpinTexture ();
@@ -529,6 +542,7 @@ public class MainMenuScript : MonoBehaviour
         if (!playClicked && !QuitMenu && !cashPanelActive)
         {
             settingImage.color = new Color(255, 255, 255, 255);
+            MainMenu.SetActive(false);
             if (socialMediaPanelActive)
             {
                 socialMediaPanelActive = false;
@@ -538,7 +552,7 @@ public class MainMenuScript : MonoBehaviour
             if (settingPanelActive)
             {
                 settingPanelActive = false;
-                settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
+                //settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
                 Invoke("HideSetting", 0.667f);
             }
 
@@ -654,7 +668,7 @@ public class MainMenuScript : MonoBehaviour
         if (settingPanelActive)
         {
             settingPanelActive = false;
-            settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
+            //settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
             Invoke("HideSetting", 0.667f);
         }
     }
@@ -683,7 +697,7 @@ public class MainMenuScript : MonoBehaviour
             if (settingPanelActive)
             {
                 settingPanelActive = false;
-                settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
+                //settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
                 Invoke("HideSetting", 0.667f);
             }
             //HideTopCenterBanner();
@@ -737,7 +751,7 @@ public class MainMenuScript : MonoBehaviour
             if (settingPanelActive)
             {
                 settingPanelActive = false;
-                settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
+               // settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
                 Invoke("HideSetting", 0.667f);
             }
         }
@@ -758,14 +772,14 @@ public class MainMenuScript : MonoBehaviour
                 if (socialMediaPanelActive)
                 {
                     socialMediaPanelActive = false;
-                    socialMediaPanel.GetComponent<Animation>().Play("socialMedia1End", PlayMode.StopAll);
+                    //socialMediaPanel.GetComponent<Animation>().Play("socialMedia1End", PlayMode.StopAll);
                     Invoke("HideSocialMedia", 0.5f);
                 }
             }
             else
             {
                 settingPanelActive = false;
-                settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
+               // settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
                 settingImage.color = new Color(255, 255, 255, 255);
                 Invoke("HideSetting", 0.667f);
             }
@@ -805,7 +819,7 @@ public class MainMenuScript : MonoBehaviour
             if (settingPanelActive)
             {
                 settingPanelActive = false;
-                settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
+               // settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
                 Invoke("HideSetting", 0.667f);
             }
 
@@ -883,7 +897,7 @@ public class MainMenuScript : MonoBehaviour
             if (settingPanelActive)
             {
                 settingPanelActive = false;
-                settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
+               // settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
                 Invoke("HideSetting", 0.667f);
             }
             //HideTopCenterBanner();
@@ -918,7 +932,7 @@ public class MainMenuScript : MonoBehaviour
             if (settingPanelActive)
             {
                 settingPanelActive = false;
-                settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
+                //settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
                 Invoke("HideSetting", 0.667f);
             }
             if (buttonName.Equals("multiPlayer"))
@@ -963,7 +977,7 @@ public class MainMenuScript : MonoBehaviour
             if (settingPanelActive)
             {
                 settingPanelActive = false;
-                settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
+                //settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
                 Invoke("HideSetting", 0.667f);
             }
             if (PlayerPrefs.GetInt("SoundOff") == 0)
@@ -991,7 +1005,7 @@ public class MainMenuScript : MonoBehaviour
         if (settingPanelActive)
         {
             settingPanelActive = false;
-            settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
+            //settingPanel.GetComponent<Animation>().Play("settingPanelClose", PlayMode.StopAll);
             Invoke("HideSetting", 0.667f);
         }
 
@@ -1076,5 +1090,38 @@ public class MainMenuScript : MonoBehaviour
     public void rateApp()
     {
         Application.OpenURL("https://play.google.com/store/apps/developer?id=com.smashbike.racing.game.bikers");
+    }
+
+    //Add For New UI
+    public void OnExitButoon()
+    {
+        if (!helpbool && (!cashBundle && !storeBundle) && !spinPanelActive && !insufficientTicket && !dailyBonusActive)
+        {
+            QuitMenu = !QuitMenu;
+            if (QuitMenu)
+            {
+                quitPanel.SetActive(true);
+                //Time.timeScale=0.0f;
+                /*                if (PlayerPrefs.GetInt("SoundOff") == 0)
+                               {
+                                   AudioListener.volume = 0.0f;
+                               } */
+                HideTopCenterBanner();
+                ShowLargeBanner();
+                Invoke("ShowQuitAd", 0.1f);
+            }
+            else if (!QuitMenu)
+            {
+                quitPanel.SetActive(false);
+                Time.timeScale = 1.0f;
+                /*                 if (PlayerPrefs.GetInt("SoundOff") == 0)
+                                {
+                                    AudioListener.volume = 1.0f;
+                                } */
+                HideLargeBanner();
+                ShowTopCenterBanner();
+            }
+        }
+
     }
 }

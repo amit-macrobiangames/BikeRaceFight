@@ -12,13 +12,13 @@ public class SimpleAdScript : MonoBehaviour
 	}
 
 	public void show(){
-		Advertisement.Show ();
+		//Advertisement.Show ();
 	}
 	IEnumerator ShowAdWhenReady()
 	{
-		while (!Advertisement.IsReady ())
+		//while (!Advertisement.IsReady ())
 			yield return null;
 		
-		Advertisement.Show ();
+		//Advertisement.Show ();
 	}
 }

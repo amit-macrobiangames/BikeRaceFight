@@ -37,7 +37,7 @@ public class findTarget : MonoBehaviour {
 	
 	
 		levelNumber = PlayerPrefs.GetInt ("levels");
-		levelNumber = 9;
+		//levelNumber = 9;
 
 	
 		if (levelNumber != 9 && levelNumber != 10) {

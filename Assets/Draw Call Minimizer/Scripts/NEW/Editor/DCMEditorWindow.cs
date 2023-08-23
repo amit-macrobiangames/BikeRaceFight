@@ -547,7 +547,7 @@ namespace DCM {
                 importer.generateSecondaryUV = _isGeneratingLightmapUVs;
                 importer.generateAnimations = ModelImporterGenerateAnimations.None;
                 importer.optimizeMesh = true;
-                importer.importMaterials = false;
+                // importer.importMaterials = false; Add
 
                 AssetDatabase.ImportAsset(_exportPath + mf.name.Replace('.', '_') + ".obj", ImportAssetOptions.ForceUpdate);
                 mf.sharedMesh = (Mesh)AssetDatabase.LoadAssetAtPath(_exportPath + mf.name.Replace('.', '_') + ".obj", typeof(Mesh));

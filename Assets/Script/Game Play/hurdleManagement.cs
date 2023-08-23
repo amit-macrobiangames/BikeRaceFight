@@ -8,6 +8,7 @@ public class hurdleManagement : MonoBehaviour
     List<Transform> levelHurdles = new List<Transform>();
     public Transform[] hurdles;
     public GameObject currentHurdle;
+    public GameObject current2Hurdle;
     public float zPosition;
     float distance;
     int totalPosition;
@@ -35,21 +36,38 @@ public class hurdleManagement : MonoBehaviour
         //	level =11;
         //level = 13;
 
-        if (level == 7 || level == 11 || level == 14 || level == 1 || level == 13)
+        //Add new Tracks
+        if(level == 1 || level == 3 || level == 19)
+        {
+            tracks[3].SetActive(true);
+            tracks[3] = null;
+        }
+        else if(level == 5 || level == 7 || level == 18)
+        {
+            tracks[4].SetActive(true);
+            tracks[4] = null;
+        }
+        else if(level == 12 || level == 15 || level == 13 || level == 20 || level == 17)
+        {
+            tracks[5].SetActive(true);
+            tracks[5] = null;
+        }
+
+        else if (level == 11 || level == 14)
         {
 
             tracks[0].SetActive(true);
             tracks[0] = null;
 
         }
-        else if (level == 2 || level == 4 || level == 5 || level == 6 || level == 8)
+        else if (level == 2 || level == 4 || level == 6 || level == 8)
         {
 
             tracks[2].SetActive(true);
             tracks[2] = null;
 
         }
-        else if (level == 3 || level == 9 || level == 10 || level == 12 || level == 15 || level == 16)
+        else if (level == 9 || level == 10 || level == 16)
         {
 
             tracks[1].SetActive(true);
@@ -84,17 +102,12 @@ public class hurdleManagement : MonoBehaviour
         }
         else if (level == 3 || level == 4)
         {
-
-
             TotalHurdles[2].SetActive(true);
             currentHurdle = TotalHurdles[2];
             TotalHurdles[2] = null;
-
         }
         else if (level == 5)
         {
-
-
             TotalHurdles[3].SetActive(true);
             currentHurdle = TotalHurdles[3];
             TotalHurdles[3] = null;
@@ -102,8 +115,7 @@ public class hurdleManagement : MonoBehaviour
         }
         else if (level == 6)
         {
-
-
+            
             TotalHurdles[4].SetActive(true);
             currentHurdle = TotalHurdles[4];
             TotalHurdles[4] = null;
@@ -136,7 +148,6 @@ public class hurdleManagement : MonoBehaviour
         }
         else if (level == 11)
         {
-
             TotalHurdles[8].SetActive(true);
             currentHurdle = TotalHurdles[8];
             TotalHurdles[8] = null;
@@ -158,15 +169,49 @@ public class hurdleManagement : MonoBehaviour
             TotalHurdles[10] = null;
 
         }
-        else if (level == 15 || level == 16)
+        else if (level == 15 || level == 16 || level == 20)
         {
 
             TotalHurdles[11].SetActive(true);
             currentHurdle = TotalHurdles[11];
             TotalHurdles[11] = null;
-
+            if(level == 20)
+            {
+                TotalHurdles[5].SetActive(true);
+                currentHurdle = TotalHurdles[5];
+                TotalHurdles[5] = null;
+            }
         }
+        else if(level == 18)
+        {
+            TotalHurdles[5].SetActive(true);
+            current2Hurdle = TotalHurdles[5];
+            TotalHurdles[5] = null;
 
+            TotalHurdles[2].SetActive(true);
+            currentHurdle = TotalHurdles[2];
+            TotalHurdles[2] = null;
+        }
+        else if(level == 19)
+        {
+            TotalHurdles[11].SetActive(true);
+            current2Hurdle = TotalHurdles[11];
+            TotalHurdles[11] = null;
+
+            TotalHurdles[3].SetActive(true);
+            currentHurdle = TotalHurdles[3];
+            TotalHurdles[3] = null;
+        }
+        else if(level == 17)
+        {
+            TotalHurdles[11].SetActive(true);
+            current2Hurdle = TotalHurdles[11];
+            TotalHurdles[11] = null;
+
+            TotalHurdles[4].SetActive(true);
+            currentHurdle = TotalHurdles[4];
+            TotalHurdles[4] = null;
+        }
 
         for (var i = 0; i < TotalHurdles.Length; i++)
         {
@@ -193,21 +238,22 @@ public class hurdleManagement : MonoBehaviour
             totalPosition = 10;
 
         }
-        else if (level == 3 || level == 4)
+        else if (level == 3 || level == 4 || level == 18)
         {
 
             distance = 62.5f;
             totalPosition = 18;
 
         }
-        else if (level == 5)
+        else if (level == 5 || level == 19)
         {
 
             distance = 100f;
             totalPosition = 8;
 
+
         }
-        else if (level == 6)
+        else if (level == 6 || level == 17)
         {
 
             distance = 100f;
@@ -231,7 +277,7 @@ public class hurdleManagement : MonoBehaviour
             totalPosition = 35;
 
         }
-        if ((level < 7 || level >= 11) && level != 15 && level != 16)
+        if (((level < 7 || level >= 11) && level != 15 && level != 16 && level != 20) || level == 18 || level == 19 || level == 17)
         {
             foreach (Transform childs in currentHurdle.transform)
             {
@@ -242,12 +288,13 @@ public class hurdleManagement : MonoBehaviour
 
             SetzPosition();
 
-        }
-        else if (level == 7 || level == 8 || level == 9 || level == 10 || level == 15 || level == 16)
+        } 
+        else if (level == 7 || level == 8 || level == 9 || level == 10 || level == 15 || level == 16 || level == 20 || level == 18 || level == 19 || level == 17)
         {
 
             placePickups();
         }
+
     }
 
     void placePickups()
@@ -261,7 +308,7 @@ public class hurdleManagement : MonoBehaviour
 
     void placeHurdles()
     {
-        if (level == 6)
+        if (level == 6 || level == 17)
         {
             hurdles[2].position = new Vector3(hurdles[0].position.x, hurdles[0].position.y, Zpos[2]);
             hurdles[1].position = new Vector3(hurdles[1].position.x, hurdles[1].position.y, Zpos[5]);

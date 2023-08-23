@@ -36,7 +36,7 @@ public class searchInapp : MonoBehaviour
             Invoke("GetPlayer", 1);
         }
     }
-    string prefName;
+    public string prefName;
 
     public void purchaseWithCoins(int info)
     {
@@ -112,12 +112,12 @@ public class searchInapp : MonoBehaviour
 
     public void ftn()
     {
-        inappScript.InappFtn(currentBtn.currentSelectedGameObject.name);
+        //inappScript.InappFtn(currentBtn.currentSelectedGameObject.name);
     }
 
 
     public void mediationVideoFtn()
     {
-        rewardedVideoScript.rewardedVideoFtn(currentBtn.currentSelectedGameObject.name);
+        //rewardedVideoScript.rewardedVideoFtn(currentBtn.currentSelectedGameObject.name);
     }
 }

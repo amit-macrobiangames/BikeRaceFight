@@ -57,9 +57,9 @@ public class MotionBlur : ImageEffectBase
 		// Setup the texture and floating point values in the shader
 		material.SetTexture("_MainTex", accumTexture);
 		material.SetFloat("_AccumOrig", 1.0F-blurAmount);
-		
-		// Render the image using the motion blur shader
-		Graphics.Blit (source, accumTexture, material);
-		Graphics.Blit (accumTexture, destination);
-	}
+
+        // Render the image using the motion blur shader
+        Graphics.Blit(source, accumTexture, material);
+        Graphics.Blit(accumTexture, destination);
+    }
 }

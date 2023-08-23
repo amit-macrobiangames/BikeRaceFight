@@ -4,9 +4,13 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class levelScript : MonoBehaviour
 {
+    //New Add
+    public int CurrentLevel;
+
     public string[] levelObjs;
     public string[] levelNames;
     public string[] levelDistance;
+
     public Text levelObjText, levelNameText, levelDistText;//, levelRewradText;
     public Button playBtn;
     int levelNumber;
@@ -33,7 +37,6 @@ public class levelScript : MonoBehaviour
     void Start()
     {
         playClickBool = false;
-
         /*         for (int i = 1; i < 20; i++)
                 {
                     PlayerPrefs.SetString("level" + i + "Unlocked","true");
@@ -72,31 +75,38 @@ public class levelScript : MonoBehaviour
         {
             panelParent.rectTransform.anchoredPosition = new Vector2(-4457, 0);
         }
-        else
+        else if(levelNumber >= 16 && levelNumber < 18)
         {
-            panelParent.rectTransform.anchoredPosition = new Vector2(-4992, 0);
+            panelParent.rectTransform.anchoredPosition = new Vector2(-5506, 0);
+        }
+        else if(levelNumber >=18 && levelNumber <= 20)
+        {
+            panelParent.rectTransform.anchoredPosition = new Vector2(-6762, 0);
         }
     }
     public void levelSelection(int level)
     {
-        levelNumber = level;
-        PlayerPrefs.SetInt("levels", level);
-        PlayerPrefs.Save();
-        levelObjText.text = levelObjs[(level - 1)];
-        levelNameText.text = levelNames[(level - 1)];
-        levelDistText.text = levelDistance[(level - 1)];
-        //levelRewradText.text = (level * 1000) + System.String.Empty;
-        selectedImg.transform.parent = GameObject.Find(("level" + levelNumber)).transform;
-        selectedImg.rectTransform.anchoredPosition = new Vector2(0, 0);
 
-        //if (PlayerPrefs.GetString("level" + level + "Unlocked").Equals("true"))
-        //{
-        //    playBtn.interactable = true;
-        //}
-        //else
-        //{
-        //    playBtn.interactable = false;
-        //}
+            levelNumber = level;
+            PlayerPrefs.SetInt("levels", level);
+            PlayerPrefs.Save();
+            levelObjText.text = levelObjs[(level - 1)];
+            levelNameText.text = levelNames[(level - 1)];
+            levelDistText.text = levelDistance[(level - 1)];
+            //levelRewradText.text = (level * 1000) + System.String.Empty;
+            selectedImg.transform.parent = GameObject.Find(("level" + levelNumber)).transform;
+            selectedImg.rectTransform.anchoredPosition = new Vector2(0, 0);
+
+
+        if (PlayerPrefs.GetString("level" + level + "Unlocked").Equals("true"))
+        {
+            playBtn.interactable = true;
+        }
+        else
+        {
+            playBtn.interactable = false;
+        }
+
     }
     public void LetsGo()
     {
@@ -158,7 +168,7 @@ public class levelScript : MonoBehaviour
         asyncvar = SceneManager.LoadSceneAsync(levelName);
         yield return asyncvar;
     }
-    // Update is called once per frame
+    // Update is called once per frame  
     void Update()
     {
         if (playClickBool)
@@ -172,6 +182,6 @@ public class levelScript : MonoBehaviour
                 LoadALevel("desert");
             }
         }
-
+        
     }
 }

@@ -4,6 +4,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class storeBtnHandlers : MonoBehaviour
 {
+    //Add for UI
+    public GameObject[] NewMainMenu;
+
     public RectTransform[] selectionImages;
     public AudioClip clickSound;
     public GameObject bgMusic;
@@ -93,7 +96,7 @@ public class storeBtnHandlers : MonoBehaviour
     }
     void Start()
     {
-        plusBG.sprite = plusTexture;
+        //plusBG.sprite = plusTexture;
         bundlePanelActive = false;
         //bikeSelection.bikeCount=1;
         counter = 0;
@@ -395,6 +398,10 @@ public class storeBtnHandlers : MonoBehaviour
     {
         if (!bundlePanelActive)
         {
+            foreach(GameObject go in NewMainMenu)
+            {
+                go.SetActive(false);
+            }
             levelselection.SetActive(true);
             bikePanel.SetActive(false);
             batPanel.SetActive(false);
@@ -462,6 +469,25 @@ public class storeBtnHandlers : MonoBehaviour
             }
         }
     }
+
+    public void ExitMenu()
+    {
+        if (warningBox.activeInHierarchy)
+        {
+            warningBox.SetActive(false);
+            return;
+        }
+            if (!bundlePanelActive)
+            {
+                if (counter == 0)
+                {
+                    SceneManager.LoadScene("mainMenu3");
+
+                }
+            }
+        
+
+     }
 
     public void backBtn()
     {
@@ -584,7 +610,7 @@ public class storeBtnHandlers : MonoBehaviour
     {
         characteristicNumber += 1;
         SwitchCharacteristic();
-
+        dressCode();
         btnClicksound();
     }
     public void SwitchCharacteristic()

@@ -496,6 +496,13 @@ public class PhycamViews : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.B))
+        {
+            SlowMotion();
+        }
+    }
     void adjustCam()
     {
         slowingDown = false;

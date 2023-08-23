@@ -518,6 +518,14 @@ public class weaponAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKey(KeyCode.V))
+        {
+            shieldBtnClicked();
+        }
+        if(Input.GetKey(KeyCode.Space) && !parentBike.flyoverStart && !parentBike.isJumping && endlessmodeGraphics.gameMode.Equals("Idle"))
+        {
+            BoostClick();
+        }
         if (bikeID == 0)
         {
             isdead = turnLevelcontrols.isdead;
@@ -1188,7 +1196,7 @@ public class weaponAI : MonoBehaviour
     }
     void pistolDamage(string name, float range)
     {
-        if (levelID == 6)
+        if (levelID == 6 || levelID == 17)
         {
 
             target_obj = GetGangster();
@@ -1855,6 +1863,8 @@ public class weaponAI : MonoBehaviour
                 }
             }
         }
+        
+
     }
     public void WeaponFire()
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 //#if !UNITY_EDITOR
-using GooglePlayGames;
+
 //#endif
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
@@ -17,43 +17,43 @@ public class gamePlayService : MonoBehaviour
     {
         try
         {
-            if (PlayGamesPlatform.Instance.IsAuthenticated())
-            {
-                Social.ReportScore(PlayerPrefs.GetInt("leaderBoardScore"), leaderboard, (bool success) =>
-              {
-                  if (success)
-                  {
-                      ((PlayGamesPlatform)Social.Active).ShowLeaderboardUI(leaderboard);
-                      PlayerPrefs.SetInt("NoOfscorePosted", (PlayerPrefs.GetInt("NoOfscorePosted") + 1));
-                  }
-                  else
-                  {
-                      //Debug.Log("Login failed for some reason");
-                  }
-              });
-            }
-            else
-            {
-                Social.localUser.Authenticate((bool success) =>
-                {
-                    if (success)
-                    {
-                        Social.ReportScore(PlayerPrefs.GetInt("leaderBoardScore"), leaderboard, (bool successful) =>
-                      {
-                          if (successful)
-                          {
-                              ((PlayGamesPlatform)Social.Active).ShowLeaderboardUI(leaderboard);
-                              PlayerPrefs.SetInt("NoOfscorePosted", (PlayerPrefs.GetInt("NoOfscorePosted") + 1));
-                          }
-                          else
-                          {
-                              //Debug.Log("Login failed for some reason");
-                          }
-                      });
-                    }
-                });
+            //if (PlayGamesPlatform.Instance.IsAuthenticated()) Add
+            //{
+            //    Social.ReportScore(PlayerPrefs.GetInt("leaderBoardScore"), leaderboard, (bool success) =>
+            //  {
+            //      if (success)
+            //      {
+            //          ((PlayGamesPlatform)Social.Active).ShowLeaderboardUI(leaderboard);
+            //          PlayerPrefs.SetInt("NoOfscorePosted", (PlayerPrefs.GetInt("NoOfscorePosted") + 1));
+            //      }
+            //      else
+            //      {
+            //          //Debug.Log("Login failed for some reason");
+            //      }
+            //  });
+            //}
+            //else
+            //{
+            //    Social.localUser.Authenticate((bool success) =>
+            //    {
+            //        if (success)
+            //        {
+            //            Social.ReportScore(PlayerPrefs.GetInt("leaderBoardScore"), leaderboard, (bool successful) =>
+            //          {
+            //              if (successful)
+            //              {
+            //                  ((PlayGamesPlatform)Social.Active).ShowLeaderboardUI(leaderboard);
+            //                  PlayerPrefs.SetInt("NoOfscorePosted", (PlayerPrefs.GetInt("NoOfscorePosted") + 1));
+            //              }
+            //              else
+            //              {
+            //                  //Debug.Log("Login failed for some reason");
+            //              }
+            //          });
+            //        }
+            //    });
 
-            }
+            //}
         }
         catch (System.Exception e)
         {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 //#if !UNITY_EDITOR
-using GooglePlayGames;
+
 //#endif
 
 using UnityEngine.UI;
@@ -52,7 +52,7 @@ public class playservices : MonoBehaviour
         if (!setPosition)
         {
             setPosition = true;
-            (PlayGamesPlatform.Instance).SetGravityForPopups(GooglePlayGames.BasicApi.Gravity.TOP | GooglePlayGames.BasicApi.Gravity.RIGHT);
+            //(PlayGamesPlatform.Instance).SetGravityForPopups(GooglePlayGames.BasicApi.Gravity.TOP | GooglePlayGames.BasicApi.Gravity.RIGHT); Add
 
         }
     }
@@ -60,7 +60,7 @@ public class playservices : MonoBehaviour
     public void signInFtn()
     {
         Invoke("SetinitializeLogin", 2);
-        PlayGamesPlatform.Activate();
+        //PlayGamesPlatform.Activate(); Add
         Invoke("Sign", 0.1f);
 
 
@@ -92,7 +92,7 @@ public class playservices : MonoBehaviour
     public void signOutFtn()
     {
 
-        ((PlayGamesPlatform)Social.Active).SignOut();
+        //((PlayGamesPlatform)Social.Active).SignOut(); Add
 
         Debug.Log("Loged out");
         userName.text = "";
@@ -104,14 +104,14 @@ public class playservices : MonoBehaviour
 
     public void showLeaderboardFtn()
     {
-        if (PlayGamesPlatform.Instance.IsAuthenticated())
-            Social.ShowLeaderboardUI();
-        else
-        {
+        //if (PlayGamesPlatform.Instance.IsAuthenticated()) Add
+        //    Social.ShowLeaderboardUI();
+        //else
+        //{
 
-            signInFtn();
-            Invoke("Show_LeaderBoard", 1);
-        }
+        //    signInFtn();
+        //    Invoke("Show_LeaderBoard", 1);
+        //}
     }
     void Show_LeaderBoard()
     {
@@ -124,15 +124,15 @@ public class playservices : MonoBehaviour
         });
     }
     public void showAchievementftn()
-    {
-        if (PlayGamesPlatform.Instance.IsAuthenticated())
-            Social.ShowAchievementsUI();
-        else
-        {
-            signInFtn();
-            Invoke("Show_Achieve", 1);
+    { 
+        //if (PlayGamesPlatform.Instance.IsAuthenticated()) Add
+        //    Social.ShowAchievementsUI();
+        //else
+        //{
+        //    signInFtn();
+        //    Invoke("Show_Achieve", 1);
 
-        }
+        //}
     }
     void Show_Achieve()
     {

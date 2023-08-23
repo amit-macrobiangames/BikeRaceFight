@@ -112,7 +112,7 @@ public class rewardedVideo : MonoBehaviour {
 		//print (currentItemName);
 		PlayerPrefs.SetString ("currentlyPurchasedItem",currentItemName);
 		//#if !UNITY_EDITOR
-		Adcontrol.instace.ShowRewardedVideo();
+		//Adcontrol.instace.ShowRewardedVideo();
 		//#endif
 	}
 

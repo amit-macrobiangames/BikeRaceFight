@@ -133,6 +133,7 @@ public class DailyRewardSystem : MonoBehaviour
                 PlayerPrefs.SetInt("cash", (PlayerPrefs.GetInt("cash") + 1000));
                 PlayerPrefs.Save();
                 done1.SetActive(true);
+                Debug.Log("Day1");
                 day1Get.SetActive(false);
                 PlaySound();
                 break;
@@ -170,7 +171,7 @@ public class DailyRewardSystem : MonoBehaviour
     }
     void PlaySound()
     {
-        _audioSource.PlayOneShot(getSound);
+        _audioSource.PlayOneShot(getSound); 
     }
     IEnumerator BonusTimeCounter()
     {

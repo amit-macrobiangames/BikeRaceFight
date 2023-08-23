@@ -34,7 +34,7 @@ public class jeepControl : MonoBehaviour
         enemyCar.transform.position = new Vector3(enemyCar.transform.position.x, enemyCar.transform.position.y, playerBike.position.z + 205);
         //enemyCar.transform.position=new Vector3(enemyCar.transform.position.x,enemyCar.transform.position.y, playerBike.transform.position.z + 1000);
         towardPlayer = true;
-        if (levelNumber != 7 && levelNumber != 8)
+        if (levelNumber != 7 && levelNumber != 8 && levelNumber != 20 && levelNumber != 18)
         {
             shieldPickup.SetActive(false);
             gameObject.SetActive(false);
@@ -44,7 +44,7 @@ public class jeepControl : MonoBehaviour
             gameObject.SetActive(true);
             shieldPickup.SetActive(true);
         }
-        if (levelNumber == 7 || levelNumber == 8)
+        if (levelNumber == 7 || levelNumber == 8 || levelNumber == 20 || levelNumber == 18)
         {
             healthBar.SetActive(true);
             healthBar.transform.GetComponent<Renderer>().material.mainTexture = new13;

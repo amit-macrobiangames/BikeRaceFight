@@ -260,8 +260,8 @@ public class endlessmodeGraphics : MonoBehaviour
     }
     public void Paused()
     {
-        Adcontrol.instace.hideBanner();
-        Adcontrol.instace.showAd();
+      //  Adcontrol.instace.hideBanner();
+     //   Adcontrol.instace.showAd();
         if (!weaponAI.boostBundleOpened && !PhycamViews.slowBundleOpened && !weaponAI.ammoBundleOpened && !levelClear && !weaponAI.shieldBundleOpened)
         {
             if (started && !death && tiltControl.startTiltAfterCam)
@@ -296,7 +296,7 @@ public class endlessmodeGraphics : MonoBehaviour
                     {
                         pauseadd = false;
                         //Adcontrol.instace.showAd();
-                        Adcontrol.instace.showBanner();
+                        //Adcontrol.instace.showBanner();
                     }
 
                 }
@@ -312,7 +312,7 @@ public class endlessmodeGraphics : MonoBehaviour
                         AudioListener.volume = 1.0f;
                     }
                     pauseadd = true;
-                    Adcontrol.instace.showAd();
+                    //Adcontrol.instace.showAd();
                     ShowTopCenterBanner();
 
                 }
@@ -442,7 +442,7 @@ public class endlessmodeGraphics : MonoBehaviour
         //googlePlayServiceScript.checkAchievement();
       
         gameOverPanel.SetActive(true);
-        Adcontrol.instace.showAd();
+     //   Adcontrol.instace.showAd();
         statsPanelOpen();
         gamePlayPanel.SetActive(false);
 
@@ -485,8 +485,8 @@ public class endlessmodeGraphics : MonoBehaviour
             unityAnalyticsLevelFailedFtn();
 
 
-            Adcontrol.instace.hideBanner();
-            Adcontrol.instace.showAd();
+           // Adcontrol.instace.hideBanner();
+           // Adcontrol.instace.showAd();
            // if (fail_Count > 1)
                 //Adcontrol.instace.showAd();
         }
@@ -740,7 +740,7 @@ public class endlessmodeGraphics : MonoBehaviour
         }
 
         levelCompletePanel.SetActive(true);
-        Adcontrol.instace.showAd();
+        //Adcontrol.instace.showAd();
 
         PlayerPrefs.SetInt("singelLevelScore", (int)(heavyBikeTurns.score + Mathf.Round((((player.root.position.z - (-900f)) / 1000) * 500))));
         if (bikeNo == 1)
@@ -769,7 +769,7 @@ public class endlessmodeGraphics : MonoBehaviour
 
             levelCompleteAdd = false;
             unityAnalyticsFtn();
-            Adcontrol.instace.hideBanner();
+            //Adcontrol.instace.hideBanner();
           
             if (win_Count > 1 && try_count > 0)
             {
@@ -783,6 +783,6 @@ public class endlessmodeGraphics : MonoBehaviour
 
     public void ShowTopCenterBanner()
     {
-        Adcontrol.instace.showBanner();
+       // Adcontrol.instace.showBanner();
     }
 }

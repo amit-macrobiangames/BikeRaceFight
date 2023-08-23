@@ -64,10 +64,10 @@ public class heliMissileShoot : MonoBehaviour {
 			
 						if (!playerCrashed && !playerDead && !levelClear && !gameOver ) {
 								Instantiate (rocket1, transform.position + new Vector3 (0, -0.5f, 0), transform.rotation);
-				//rocket1.SetActive(true);
-				//rocket1.transform.position=transform.position + new Vector3 (0, -0.5f, 0);
-						}
-				}
+                //rocket1.SetActive(true);
+                //rocket1.transform.position = transform.position + new Vector3(0, -0.5f, 0);
+            }
+        }
 		}
 	void Target()
 	{

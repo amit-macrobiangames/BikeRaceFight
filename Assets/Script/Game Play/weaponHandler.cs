@@ -3,6 +3,9 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class weaponHandler : MonoBehaviour
 {
+    //Add for UI
+    public GameObject NextButton;
+    public bool checker;
     public Image damage, range;
     public Image batDamage, batrange;
     public GameObject closePurchase, backBtnImage, bikeImage, shirtImage;
@@ -33,6 +36,15 @@ public class weaponHandler : MonoBehaviour
     //public Sprite shirt10Purchase,shirt2Purchase,shirt3Purchase,shirt4Purchase,shirt5Purchase,shirt6Purchase,shirt7Purchase,shirt8Purchase,shirt9Purchase;
     void Awake()
     {
+        if (!PlayerPrefs.HasKey("shirtColor"))
+            PlayerPrefs.SetString("shirtColor", "shirt1");
+        if (!PlayerPrefs.HasKey("bikeColor"))
+            PlayerPrefs.SetString("bikeColor", "yellow");
+        if (!PlayerPrefs.HasKey("batSelect"))
+            PlayerPrefs.SetInt("batSelect", 0);
+        if (!PlayerPrefs.HasKey("pistolSelect"))
+            PlayerPrefs.SetInt("pistolSelect", 0);
+
         PlayerPrefs.SetString("pistolPurchases", "true");
         PlayerPrefs.SetString("shirt1Purchased", "true");
         PlayerPrefs.SetString("yellowPurchased", "true");
@@ -42,17 +54,13 @@ public class weaponHandler : MonoBehaviour
         //PlayerPrefs.SetInt ("cash",50000);
         cash.text = PlayerPrefs.GetInt("cash") + System.String.Empty;
         currentBtn = EventSystem.current;
-        if (!PlayerPrefs.HasKey("shirtColor"))
-            PlayerPrefs.SetString("shirtColor", "shirt1");
-        if (!PlayerPrefs.HasKey("bikeColor"))
-            PlayerPrefs.SetString("bikeColor", "yellow");
-        if (!PlayerPrefs.HasKey("batSelect"))
-            PlayerPrefs.SetInt("batSelect", 0);
-        if (!PlayerPrefs.HasKey("pistolSelect"))
-            PlayerPrefs.SetInt("pistolSelect", 0);
     }
     void Start()
     {
+        dressPlayer.currentShirt = PlayerPrefs.GetString("shirtColor");
+        dressPlayer.currentBikeColor = PlayerPrefs.GetString("bikeColor");
+        dressPlayer.dressCode();
+
         //if(Application.isEditor)
         //PlayerPrefs.SetInt ("cash",500000);
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
@@ -60,7 +68,7 @@ public class weaponHandler : MonoBehaviour
         startAnimatingCash = false;
 
         resetTexture();
-        startbarColor(heavybikeBarImage);
+        //startbarColor(heavybikeBarImage);
         bikerbarColor(bikerBarImage);
         if (PlayerPrefs.GetInt("batSelect") == 1)
         {
@@ -132,9 +140,6 @@ public class weaponHandler : MonoBehaviour
 
 
         }
-        dressPlayer.currentShirt = PlayerPrefs.GetString("shirtColor");
-        dressPlayer.currentBikeColor = PlayerPrefs.GetString("bikeColor");
-        dressPlayer.dressCode();
 
 
 
@@ -461,6 +466,7 @@ public class weaponHandler : MonoBehaviour
 
                 }
             }
+            
             dressPlayer.dressCode();
             shirtImage.SetActive(true);
             bikeImage.SetActive(true);
@@ -475,7 +481,7 @@ public class weaponHandler : MonoBehaviour
             buyItem.SetActive(false);
             dressPlayer.nextItem.SetActive(true);
             purchasingCostume = false;
-
+            NextButton.SetActive(false);
 
         }
         else if (axePanelPurchasing)
@@ -521,9 +527,9 @@ public class weaponHandler : MonoBehaviour
             //
             //			}
         }
-        else
+        else if(bikeSelection.bikeCount == 2)
         {
-            if (PlayerPrefs.GetString("bikeColor").Equals("black"))
+            if (PlayerPrefs.GetString("bikeColor") == ("black"))
             {
                 PlayerPrefs.SetString("bikeColor", "orange");
                 dressPlayer.dressCode();
@@ -532,7 +538,6 @@ public class weaponHandler : MonoBehaviour
             {
 
                 childs.color = white;
-
             }
             foreach (Image childs in harleybikeBarImage)
             {
@@ -541,7 +546,6 @@ public class weaponHandler : MonoBehaviour
                 {
                     childs.color = green;
                 }
-
             }
         }
 
@@ -729,7 +733,7 @@ public class weaponHandler : MonoBehaviour
 
         }
         batBarImage[0].color = green;
-
+        NextButton.SetActive(false);
     }
 
     public void BatClicked(string name)
@@ -802,6 +806,8 @@ public class weaponHandler : MonoBehaviour
 
     public void cancelgunPanelpurchasing()
     {
+        closePurchase.SetActive(false);
+        backBtnImage.SetActive(true);
         pistolClicked();
         gunPanelPurchasing = false;
         foreach (Image childs in pistolBarImage)
@@ -811,7 +817,7 @@ public class weaponHandler : MonoBehaviour
 
         }
         pistolBarImage[0].color = green;
-
+        NextButton.SetActive(false);
     }
     public void pistolClicked()
     {
@@ -928,7 +934,7 @@ public class weaponHandler : MonoBehaviour
                 childs.color = white;
 
             }
-            currentBtn.currentSelectedGameObject.transform.GetChild(0).GetComponent<Image>().color = green;
+            //currentBtn.currentSelectedGameObject.transform.GetChild(0).GetComponent<Image>().color = green;
         }
     }
 

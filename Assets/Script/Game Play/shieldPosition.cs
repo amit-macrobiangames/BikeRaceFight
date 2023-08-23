@@ -17,6 +17,6 @@ public class shieldPosition : MonoBehaviour {
 		if(isCoins)
 			transform.position =new Vector3(transform.position.x,bike.position.y, bike.position.z);
 		else
-		transform.position = bike.position;
+			transform.position = bike.position;
 	}
 }

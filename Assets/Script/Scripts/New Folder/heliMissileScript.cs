@@ -25,7 +25,7 @@ public class heliMissileScript : MonoBehaviour {
 		if (levelID == 15) {
 						speed = 40;
 						Invoke ("followPlayerOff", 0.75f);
-				} else if (levelID == 16) {
+				} else if (levelID == 16 || levelID == 17 || levelID == 19 || levelID == 20) {
 						speed = 80;
 			Invoke ("followPlayerOff", 0.35f);
 				}
