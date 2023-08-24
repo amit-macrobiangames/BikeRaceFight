@@ -98,6 +98,22 @@ public class searchInapp : MonoBehaviour
                     PhycamViews.instance.closeTimerBundle();
                 }
             }
+            else if (prefName.Equals("shields"))
+            {
+                if(isGamePlay.Equals(true))
+                {
+                    player.root.GetComponent<weaponAI>().shieldFG.fillAmount = 1f;
+                    player.root.GetComponent<weaponAI>().closeBundle();
+                }
+            }
+            else if (prefName.Equals("ammos"))
+            {
+                if (isGamePlay.Equals(true))
+                {
+                    player.root.GetComponent<weaponAI>().ammoFG.fillAmount = 1f;
+                    player.root.GetComponent<weaponAI>().closeBundle();
+                }
+            }
             else
             {
                 if (isGamePlay.Equals(true))

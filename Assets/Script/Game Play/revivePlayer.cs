@@ -3,6 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class revivePlayer : MonoBehaviour {
+
+	//Added 
+	public static bool Revive;
+
 	public heliMissileShoot heliMissileScript;
 	public weaponAI weaponAIScript;
 	public static bool stopTimer;
@@ -32,9 +36,10 @@ public class revivePlayer : MonoBehaviour {
 	}
 	public void revival()
 	{
+		
 		//PlayerPrefs.SetInt ("helmets",10);
 		if (PlayerPrefs.GetInt ("helmets") > 0) {
-
+			Revive = true;
 			PlayerPrefs.SetInt ("helmetUsed",(PlayerPrefs.GetInt ("helmetUsed")+1));
 			PlayerPrefs.SetInt ("helmets", (PlayerPrefs.GetInt ("helmets") - 1));
 

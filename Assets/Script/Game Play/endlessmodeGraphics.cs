@@ -76,7 +76,7 @@ public class endlessmodeGraphics : MonoBehaviour
 
         levelNumber = PlayerPrefs.GetInt("levels");
 
-        if (levelNumber == 7 || levelNumber == 8 || levelNumber == 11 || levelNumber == 12 || levelNumber == 15 || levelNumber == 16)
+        if (levelNumber == 7 || levelNumber == 8 || levelNumber == 11 || levelNumber == 12 || levelNumber == 15 || levelNumber == 16 || levelNumber == 20)
         {
             shieldBtn.SetActive(true);
         }
@@ -192,7 +192,7 @@ public class endlessmodeGraphics : MonoBehaviour
             levelClear = turnLevelcontrols.levelClear;
         }
 
-        if (levelNumber == 7 || levelNumber == 8 || levelNumber == 11 || levelNumber == 12 || levelNumber == 15 || levelNumber == 16)
+        if (levelNumber == 7 || levelNumber == 8 || levelNumber == 11 || levelNumber == 12 || levelNumber == 15 || levelNumber == 16 || levelNumber == 20)
         {
 
             noOfshield.text = PlayerPrefs.GetInt("shields") + System.String.Empty;
@@ -400,8 +400,11 @@ public class endlessmodeGraphics : MonoBehaviour
         Time.timeScale = 1.0f;
         reviveCounter = 0;
         ShowLevelAd = 1;
-        if (loadingPanel)
-            loadingPanel.SetActive(true);
+
+        //Removed
+        //if (loadingPanel)
+        //    loadingPanel.SetActive(true);
+
         GetComponent<AudioSource>().PlayOneShot(clickSound);
         PlayerPrefs.SetInt("helmetUsed", 0);
         PlayerPrefs.SetFloat("totalDistaneCovered", (PlayerPrefs.GetFloat("totalDistaneCovered") + WholeDistanceCovered));
@@ -427,11 +430,14 @@ public class endlessmodeGraphics : MonoBehaviour
         PlayerPrefs.Save();
         pauseadd = true;
         PlayerPrefs.SetInt("score", 0);
-        bikeSelection.backFromLevel = false;
-        bikeSelection.backToMode = true;
+
+        //Removed
+        //bikeSelection.backFromLevel = false;
+        //bikeSelection.backToMode = true;
 
         SceneManager.LoadScene("bikeSelectLevel 2");
-        OnHome = true;
+
+        //OnHome = true; //Removed
     }
 
     public void gameOverFtn()
@@ -555,7 +561,7 @@ public class endlessmodeGraphics : MonoBehaviour
 
         bikeSelection.backToMode = true;
         bikeSelection.backFromLevel = true;
-        if (PlayerPrefs.GetInt("levels") < 16)
+        if (PlayerPrefs.GetInt("levels") < 20)
             PlayerPrefs.SetInt("levels", PlayerPrefs.GetInt("levels") + 1);
 
         SceneManager.LoadScene("bikeSelectLevel 2");
@@ -718,6 +724,23 @@ public class endlessmodeGraphics : MonoBehaviour
 
             PlayerPrefs.SetString("level16Unlocked", "true");
         }
+        else if (levelNumber == 16)
+        {
+            PlayerPrefs.SetString("level17Unlocked", "true");
+        }
+        else if (levelNumber == 17)
+        {
+            PlayerPrefs.SetString("level18Unlocked", "true");
+        }
+        else if (levelNumber == 18)
+        {
+            PlayerPrefs.SetString("level19Unlocked", "true");
+        }
+        else if (levelNumber == 19)
+        {
+            PlayerPrefs.SetString("level20Unlocked", "true");
+        }
+
         PlayerPrefs.Save();
         Time.timeScale = 0.3f;
         AudioListener.volume = 0.0f;
@@ -728,13 +751,13 @@ public class endlessmodeGraphics : MonoBehaviour
             GetComponent<AudioSource>().enabled = false;
         }
 
-        if (levelNumber < 16)
+        if (levelNumber < 20)
         {
 
             levelclearButtons.SetActive(true);
             comingSoonButton.SetActive(false);
         }
-        else if (levelNumber >= 16)
+        else if (levelNumber >= 20)
         {
 
             levelclearButtons.SetActive(false);

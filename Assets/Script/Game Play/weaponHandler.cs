@@ -5,6 +5,8 @@ public class weaponHandler : MonoBehaviour
 {
     //Add for UI
     public GameObject NextButton;
+    public GameObject CancelBtn;
+
     public bool checker;
     public Image damage, range;
     public Image batDamage, batrange;
@@ -946,6 +948,7 @@ public class weaponHandler : MonoBehaviour
     {
         if (!insufficientPanelActive)
         {
+            CancelBtn.SetActive(false);
             price1 = priceText.text + System.String.Empty;
             price1 = price1.Replace("$", string.Empty);
             price1 = price1.Replace(",", string.Empty);

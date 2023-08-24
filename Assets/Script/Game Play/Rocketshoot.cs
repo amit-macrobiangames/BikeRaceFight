@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class Rocketshoot : MonoBehaviour
 {
+    //Added
+    public bool CanShoot;
+    public float ReviveTime = 5;
+
     public jeepControl jeep;
     public static float shootRange;
     public heavyBikeTurnControls heavyBike;
@@ -26,7 +31,7 @@ public class Rocketshoot : MonoBehaviour
     //var bullet : GameObject;
     void Start()
     {
-
+        CanShoot = true;
         if (bike.GetComponent<heavyBikeTurns>().parent.name.Contains("Fatguy"))
         {
             levelID = 3;
@@ -51,7 +56,7 @@ public class Rocketshoot : MonoBehaviour
 
             if (playerHealthBar.Remainingdistance <= 700)
             {
-                shootRange = 2f;
+                shootRange = 4f;
             }
             else if (playerHealthBar.Remainingdistance <= 1500)
             {
@@ -81,7 +86,7 @@ public class Rocketshoot : MonoBehaviour
             {
 
 
-                if (!playerCrashed && !playerDead && !levelClear && !gameOver && jeep.health > 0)
+                if (!playerCrashed && !playerDead && !levelClear && !gameOver && jeep.health > 0 && CanShoot)
                 {
                     bike.GetComponent<AudioSource>().PlayOneShot(missileFireSound);
                     Instantiate(rocket, transform.position + new Vector3(0, -0.5f, 0), transform.rotation);
@@ -112,5 +117,21 @@ public class Rocketshoot : MonoBehaviour
     {
         jeepRevive = false;
         Invoke("Shoot", 1f);
+    }
+
+    //Added
+
+    private void Update()
+    {
+        if(revivePlayer.Revive)
+        {
+            StartCoroutine(WaitforRevive());
+        }
+    }
+    IEnumerator WaitforRevive()
+    {
+        CanShoot = false;
+        yield return new WaitForSeconds(ReviveTime);
+        CanShoot = true;
     }
 }

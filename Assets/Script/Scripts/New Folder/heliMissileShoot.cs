@@ -2,6 +2,10 @@
 using System.Collections;
 
 public class heliMissileShoot : MonoBehaviour {
+	//Added
+	public bool CanShoot;
+	public float TimeForRevive = 5;
+
 	public GameObject rocket1,target; 
 	Vector3 targetPos ;
 	int levelID;
@@ -11,6 +15,7 @@ public class heliMissileShoot : MonoBehaviour {
 	public turnLevelcontrols harleyBike;
 	// Use this for initialization
 	void Start () {
+		CanShoot = true;
 		if(bike.GetComponent<heavyBikeTurns>().parent.name.Contains("Fatguy"))
 		{
 			levelID=3;
@@ -21,6 +26,12 @@ public class heliMissileShoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//Added
+		if (revivePlayer.Revive)
+		{
+			StartCoroutine(WaitForRevive());
+		}
+
 		if (handleArrow.start && endlessmodeGraphics.gameMode.Equals ("Idle")) {
 						if (heliControls.heliMove == true) {
 
@@ -32,7 +43,7 @@ public class heliMissileShoot : MonoBehaviour {
 						}
 
 						//rocket1.transform.LookAt (target.transform.position);
-				}
+		}
 	}
 	public void revive()
 	{
@@ -58,7 +69,7 @@ public class heliMissileShoot : MonoBehaviour {
 			
 				}
 		
-				if (handleArrow.start && endlessmodeGraphics.gameMode.Equals ("Idle")) {
+				if (handleArrow.start && endlessmodeGraphics.gameMode.Equals ("Idle") && CanShoot) {
 	
 			
 			
@@ -74,6 +85,14 @@ public class heliMissileShoot : MonoBehaviour {
 		targetPos=new Vector3(Random.Range(1.2f,4.5f),0.139f,transform.position.z-130);
 
 		Instantiate(target , targetPos, transform.rotation);
+	}
+
+	//Added
+	IEnumerator WaitForRevive()
+	{
+		CanShoot = false;
+		yield return new WaitForSeconds(TimeForRevive);
+		CanShoot = true;
 	}
 }
 

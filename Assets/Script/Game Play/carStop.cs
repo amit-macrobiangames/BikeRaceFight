@@ -156,7 +156,7 @@ public class carStop : MonoBehaviour
                             transform.parent.GetComponent<AudioSource>().Pause();
                             //							print (transform.parent.name);
                             // pc.emit = false;//khuram
-                            script.rotateTire = false;
+                            isMove.rotateTire = false;
                             if (twoCars)
                             {
                                 // pc1.emit = false;//khuram

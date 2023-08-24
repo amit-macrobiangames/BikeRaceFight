@@ -148,6 +148,11 @@ public class storeBtnHandlers : MonoBehaviour
                 go.SetActive(false);
             }
         }
+        //Added
+        if(Input.GetKeyDown(KeyCode.Escape) && levelSelectionActive)
+        {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape) && warningBox.activeInHierarchy)
         {
@@ -165,6 +170,7 @@ public class storeBtnHandlers : MonoBehaviour
                     bundlePanelActive = false;
                 }
             }
+
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && !weaponhandler.purchasingCostume && !weaponhandler.axePanelPurchasing && !weaponhandler.gunPanelPurchasing)
         {
@@ -489,8 +495,7 @@ public class storeBtnHandlers : MonoBehaviour
             {
                 if (counter == 0)
                 {
-                    SceneManager.LoadScene("mainMenu3");
-
+                    SceneManager.LoadScene("mainMenu3");    
                 }
             }
         
@@ -539,6 +544,11 @@ public class storeBtnHandlers : MonoBehaviour
         {
             if (!LevelPlanesFuncs.playBtnClicked)
             {
+                //Added
+                foreach (GameObject GO in NewMainMenu)
+                {
+                    GO.SetActive(true);
+                }
 
                 levelSelectionActive = false;
                 //bikeCanvas.SetActive (true);

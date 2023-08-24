@@ -5,7 +5,7 @@ public class isMove : MonoBehaviour {
 	Transform player;
 	Vector3 pos;
 	//public bool bikerAhead;
-	public bool rotateTire;
+	public static bool rotateTire;
 	public Transform WheelFL,wheelRL,wheelFR,wheelRR;
 	int carWheelType;
 	bool opposite;

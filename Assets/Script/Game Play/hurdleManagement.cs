@@ -303,7 +303,7 @@ public class hurdleManagement : MonoBehaviour
         hurdles[1].position = new Vector3(hurdles[1].position.x, hurdles[1].position.y, -300f);
         hurdles[0].position = new Vector3(hurdles[0].position.x, hurdles[2].position.y, 0f);
         hurdles[3].position = new Vector3(hurdles[1].position.x, hurdles[3].position.y, 300f);
-        hurdles[4].position = new Vector3(hurdles[1].position.x, hurdles[3].position.y, -450f);
+        hurdles[4].position = new Vector3(hurdles[1].position.x, hurdles[4].position.y, -450f);
     }
 
     void placeHurdles()

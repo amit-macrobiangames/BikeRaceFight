@@ -102,7 +102,7 @@ public class findTarget : MonoBehaviour {
 				{
 								if (!isboost ) {
 										if (!carBrake) {
-												carScript.rotateTire = true;
+												isMove.rotateTire = true;
 
 
 
@@ -129,7 +129,7 @@ public class findTarget : MonoBehaviour {
 										}
 								} else  {
 										if (!carBrake) {
-												carScript.rotateTire = true;
+												isMove.rotateTire = true;
 
 
 

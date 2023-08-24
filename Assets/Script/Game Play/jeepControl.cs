@@ -2,6 +2,9 @@
 
 public class jeepControl : MonoBehaviour
 {
+    //Added
+    public float PlayertoJeepDistance = 30;
+
     public AudioClip hitSound;
     public Transform levelClear;
     //public ParticleEmitter smoke;
@@ -31,7 +34,7 @@ public class jeepControl : MonoBehaviour
         health = 10; //20
         //health = 1;
        // playerBike = endlessmodeGraphics.instance.player;
-        enemyCar.transform.position = new Vector3(enemyCar.transform.position.x, enemyCar.transform.position.y, playerBike.position.z + 205);
+        enemyCar.transform.position = new Vector3(enemyCar.transform.position.x, enemyCar.transform.position.y, playerBike.position.z + PlayertoJeepDistance);
         //enemyCar.transform.position=new Vector3(enemyCar.transform.position.x,enemyCar.transform.position.y, playerBike.transform.position.z + 1000);
         towardPlayer = true;
         if (levelNumber != 7 && levelNumber != 8 && levelNumber != 20 && levelNumber != 18)
@@ -175,7 +178,7 @@ public class jeepControl : MonoBehaviour
                     if (check == true)
                         Invoke("rand", 1);
                     //enemyCar.transform.position=new Vector3(enemyCar.transform.position.x,enemyCar.transform.position.y, playerBike.transform.position.z + 100);
-                    enemyCar.transform.position = new Vector3(enemyCar.transform.position.x, enemyCar.transform.position.y, playerBike.position.z + 20);
+                    enemyCar.transform.position = new Vector3(enemyCar.transform.position.x, enemyCar.transform.position.y, playerBike.position.z + 30);
                     check = false;
 
                     if (RocketDestroy.hit == true)

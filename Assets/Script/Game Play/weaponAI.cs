@@ -4,6 +4,10 @@ using Xft;
 using UnityEngine.UI;
 public class weaponAI : MonoBehaviour
 {
+    //Added
+    public Image shieldFG,ammoFG;
+    public static float shieldStartV,shieldUpdateV,ammoStartV,ammoUpdateV; 
+
     public Image bulletBtnBG;
     public Sprite bulletBtn, missileBtn;
     public Text carHitText, totalCoinsText;
@@ -79,9 +83,18 @@ public class weaponAI : MonoBehaviour
             PlayerPrefs.SetInt("missile", 20);
 
         startedValue = PlayerPrefs.GetInt("boosts");
+        shieldStartV = PlayerPrefs.GetInt("shieds");
         if (startedValue == 0)
         {
             boostFG.fillAmount = 0;
+        }
+        if(shieldStartV == 0)
+        {
+            shieldFG.fillAmount = 0;
+        }
+        if(ammoStartV == 0)
+        {
+            ammoFG.fillAmount = 0;
         }
         levelID = PlayerPrefs.GetInt("levels");
         if (levelID == 13 || levelID == 14)
@@ -91,6 +104,7 @@ public class weaponAI : MonoBehaviour
         else
             carHitText.transform.parent.gameObject.SetActive(false);
         updatedValue = 0.0f;
+        shieldUpdateV = 0.0f;
         layerMask = 1 << 8;
         if (levelID == 13)
             noOfCarsHit = 10;
@@ -1787,6 +1801,7 @@ public class weaponAI : MonoBehaviour
     public void closeBundle()
     {
         startedValue = PlayerPrefs.GetInt("boosts");
+        shieldStartV = PlayerPrefs.GetInt("shields");
         shieldBundleOpened = false;
         missileBundleOpened = false;
         missilePanel.SetActive(false);
@@ -1811,6 +1826,8 @@ public class weaponAI : MonoBehaviour
             if (PlayerPrefs.GetInt("shields") > 0)
             {
                 PlayerPrefs.SetInt("shieldUsed", (PlayerPrefs.GetInt("shieldUsed") + 1));
+                shieldUpdateV = (((100f / shieldStartV) / 100f));
+                shieldFG.fillAmount -= shieldUpdateV;
                 PlayerPrefs.SetInt("shields", (PlayerPrefs.GetInt("shields") - 1));
                 PlayerPrefs.Save();
                 heavyBikeTurns.activateShield = true;
@@ -1879,6 +1896,8 @@ public class weaponAI : MonoBehaviour
                     resetAll();
                     isPistolAttack = true;
                     turnPlayerOff();
+                    ammoUpdateV = (((100f / ammoStartV) / 100f));
+                    ammoFG.fillAmount -= ammoUpdateV;
                     pistolAttack();
                     pistolAttackOnce = false;
                 }
@@ -1904,6 +1923,8 @@ public class weaponAI : MonoBehaviour
                     resetAll();
                     isShotgunAttack = true;
                     turnPlayerOff();
+                    //ammoUpdateV = (((100f / ammoStartV) / 100f));
+                    //ammoFG.fillAmount -= ammoUpdateV;
                     shotgunAttack();
                     shotgunAttackOnce = false;
                 }

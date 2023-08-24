@@ -36,7 +36,7 @@ public class boostercollision : MonoBehaviour {
 		}
 		
 		heliLevels=false;
-		if(PlayerPrefs.GetInt("levels")==15 || PlayerPrefs.GetInt("levels")==16)
+		if(PlayerPrefs.GetInt("levels")==15 || PlayerPrefs.GetInt("levels")==16 || PlayerPrefs.GetInt("levels") == 17 || PlayerPrefs.GetInt("levels") == 19 || PlayerPrefs.GetInt("levels") == 20)
 			heliLevels=true;
 
 			distance=2000f;
@@ -61,7 +61,7 @@ public class boostercollision : MonoBehaviour {
 				distance=350f;
 			}
 		}
-		else if (PlayerPrefs.GetInt ("levels") == 7 || PlayerPrefs.GetInt ("levels") == 8 || PlayerPrefs.GetInt ("levels") == 11 ) {
+		else if (PlayerPrefs.GetInt ("levels") == 7 || PlayerPrefs.GetInt ("levels") == 8 || PlayerPrefs.GetInt ("levels") == 11 || PlayerPrefs.GetInt ("levels") == 20){
 			if(transform.name.Contains("shield"))
 			{
 				distance=350f;

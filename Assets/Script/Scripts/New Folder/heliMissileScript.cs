@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
-
+using System.Collections;
 
 public class heliMissileScript : MonoBehaviour {
+
+
 	public GameObject bomb ,explotion;
 
 	public ParticleSystem explosion;
@@ -42,6 +44,8 @@ public class heliMissileScript : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+
+
 		if (!bombHit) {
 						//	transform.position += new Vector3 (0,0,80*Time.deltaTime);
 			if(follow)
@@ -100,6 +104,8 @@ public class heliMissileScript : MonoBehaviour {
 			}
 		
 	}
+
+
 }
 
 
