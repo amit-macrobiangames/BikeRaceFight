@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 public class RocketDestroy : MonoBehaviour
 {
+    // Added Speed
+    public int speed = 50;
 
     // Use this for initialization
     public static GameObject bike;
@@ -31,7 +33,7 @@ public class RocketDestroy : MonoBehaviour
         }
         if (!hit)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * 50);
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
     }
 

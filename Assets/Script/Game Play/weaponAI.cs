@@ -471,7 +471,7 @@ public class weaponAI : MonoBehaviour
     {
 
         labelStyle.fontSize = System.Convert.ToInt32(Screen.width * 0.025f);
-        if (levelID.Equals(7) || levelID.Equals(8))
+        if (levelID.Equals(7) || levelID.Equals(8) || levelID.Equals(20) || levelID.Equals(18))
         {
             target_obj = GameObject.FindGameObjectWithTag("jeep");
         }
@@ -1170,7 +1170,7 @@ public class weaponAI : MonoBehaviour
     {
         shotgunControl.Shoot();
 
-        if (levelID.Equals(7) || levelID.Equals(8))
+        if (levelID.Equals(7) || levelID.Equals(8) || levelID.Equals(20) || levelID.Equals(18))
         {
             jeepControl.gunName = "shotgun";
             //			print (jeepControl.gunName+ "  "+ levelID);
@@ -1246,7 +1246,7 @@ public class weaponAI : MonoBehaviour
                 }
             }
         }
-        else if (levelID.Equals(8) || levelID.Equals(7))
+        else if (levelID.Equals(8) || levelID.Equals(7) || levelID.Equals(20) || levelID.Equals(18))
         {
             // print(transform.position.x + " " + target_obj.transform.position.x);
             if (target_obj != null)
@@ -1467,7 +1467,7 @@ public class weaponAI : MonoBehaviour
     {
         pistolControl.Shoot();
         //		print ((leftBike.position.z - transform.position.z));
-        if (levelID.Equals(7) || levelID.Equals(8))
+        if (levelID.Equals(7) || levelID.Equals(8) || levelID.Equals(20) || levelID.Equals(18))
         {
             jeepControl.gunName = "pistol";
             //			print (jeepControl.gunName+ "  "+ levelID);
@@ -1623,7 +1623,7 @@ public class weaponAI : MonoBehaviour
             rocket.transform.position = transform.position + new Vector3(0.05f, 0.387f, 0.205f);
         //Instantiate (rocket, transform.position + new Vector3 (0, 0.25f, 0.1f), transform.rotation);
         GetComponent<AudioSource>().PlayOneShot(missileSound);
-        if (levelID.Equals(7) || levelID.Equals(8))
+        if (levelID.Equals(7) || levelID.Equals(8) || levelID.Equals(20) || levelID.Equals(18))
         {
             jeepControl.gunName = "missile";
         }

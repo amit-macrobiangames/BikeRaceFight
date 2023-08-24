@@ -36,7 +36,6 @@ public class heliMissileScript : MonoBehaviour {
 			speed = 40;
 			Invoke("followPlayerOff", 0.75f);
         }
-	
 	}
 	void followPlayerOff(){
 		follow = false;

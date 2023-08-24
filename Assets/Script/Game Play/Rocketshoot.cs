@@ -38,7 +38,7 @@ public class Rocketshoot : MonoBehaviour
         Invoke("Shoot", 12f);
     }
 
-    /*       void Update()
+ /*       void Update()
           {
               transform.LookAt(bike.transform.position); //khuram
           } */

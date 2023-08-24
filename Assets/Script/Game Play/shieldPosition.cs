@@ -10,7 +10,7 @@ public class shieldPosition : MonoBehaviour {
 		if (transform.name.Equals ("coin collect Effect")) {
 			isCoins=true;
 		}
-	}
+	}	
 	
 	// Update is called once per frame
 	void LateUpdate () {

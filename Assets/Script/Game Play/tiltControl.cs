@@ -2,6 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class tiltControl : MonoBehaviour {
+
+	//Added
+	public GameObject Opponent1, Opponent2;
+
 	public newLevelHarley leftbikeScript;
 	public newLevelHarley rightbikeScript;
 	public static bool startTiltAfterCam;
@@ -32,6 +36,11 @@ public class tiltControl : MonoBehaviour {
 	
 	void Start () 
 	{
+		if(PlayerPrefs.GetInt("levels") == 20)
+        {
+			Opponent1.SetActive(false);
+			Opponent2.SetActive(false);
+        }
 		if (!PlayerPrefs.HasKey ("tiltSpeed")) {
 
 			PlayerPrefs.SetFloat ("tiltSpeed", 0.003f);
