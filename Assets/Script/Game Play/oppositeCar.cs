@@ -66,8 +66,8 @@ void Update () {
 		if (translate) {
 
 			 if (bike ) {
-				
 
+				transform.Translate(0, 0, Time.fixedDeltaTime * 50f);
 				WheelFL.Rotate(0,0,400*Time.deltaTime);	
 				wheelRL.Rotate(0,0,400*Time.deltaTime);	
 				wheelRR.Rotate(0,0,400*Time.deltaTime);	
@@ -76,7 +76,7 @@ void Update () {
 			}
 			else if (low )
 			{
-
+				transform.Translate(0, 0, Time.fixedDeltaTime * 50f);
 				WheelFL.Rotate(0,0,200*Time.deltaTime);	
 				wheelRL.Rotate(0,0,200*Time.deltaTime);	
 				wheelRR.Rotate(0,0,200*Time.deltaTime);	
@@ -85,7 +85,7 @@ void Update () {
 			}
 			else
 			{
-
+				transform.Translate(0, 0, Time.fixedDeltaTime * 10f);
 				WheelFL.Rotate(200*Time.deltaTime,0,0);	
 				wheelRL.Rotate(200*Time.deltaTime,0,0);	
 				wheelRR.Rotate(200*Time.deltaTime,0,0);	

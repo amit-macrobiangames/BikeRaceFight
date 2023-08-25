@@ -71,7 +71,7 @@ public class findTarget : MonoBehaviour {
 				
 				//		print (endlessmodeControl.startGame + endlessmodeGraphics.gameMode);
 				if (endlessmodeGraphics.gameMode == "Idle" && handleArrow.start) {
-						if (levelNumber==9 || levelNumber == 10) {
+						if (levelNumber==9) {
 		
 								target_obj = GetTarget ();
 				if (target_obj != null) {
@@ -123,7 +123,7 @@ public class findTarget : MonoBehaviour {
 							}
 							else
 							{
-								target_obj.transform.Translate (0.0f, 0, -Time.fixedDeltaTime*50f);//-1.2
+								target_obj.transform.Translate (Time.fixedDeltaTime * 10f, 0, 0);//-1.2
 							}
 							
 										}
@@ -147,7 +147,7 @@ public class findTarget : MonoBehaviour {
 							}
 							else
 							{
-								target_obj.transform.Translate (0.0f, 0, -Time.fixedDeltaTime*70);//-1.2
+								target_obj.transform.Translate (Time.fixedDeltaTime * 10f, 0, 0);//-1.2
 							}
 
 						}
@@ -157,8 +157,114 @@ public class findTarget : MonoBehaviour {
 			}
 			}
 
+						//Added for level 10
+
+
+
+
+						if (levelNumber == 10)
+						{
+
+				target_obj = GetTarget();
+				if (target_obj != null)
+				{
+					target_obj = target_obj.transform.parent.gameObject;
+
+
+					dist = Vector3.Distance(target_obj.transform.position, transform.position);
+					//					print(dist+ target_obj.name);
+
+					if (dist > 0 && dist <= 25)
+					{
+						startmove = true;
+
+
+
+					}
+					else
+					{
+
+						startmove = false;
+
+					}
+
 
 				}
+				//	print (carBrake);
+				if (target_obj == null)
+				{
+					carBrake = false;
+				}
+				if (startmove)
+				{
+					if (!isboost)
+					{
+						if (!carBrake)
+						{
+							isMove.rotateTire = true;
+
+
+
+
+
+
+
+
+
+							if (target_obj.name.Equals("heavybike"))
+							{
+
+								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 10f);//1.2
+
+							}
+							else if (target_obj.name.Contains("Low"))
+							{
+								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 0f);//1.2
+																								//	print("low");
+							}
+							else
+							{
+								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 10f);//-1.2
+							}
+
+						}
+					}
+					else
+					{
+						if (!carBrake)
+						{
+							isMove.rotateTire = true;
+
+
+
+
+
+
+							if (target_obj.name.Equals("heavybike"))
+							{
+
+								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 10f);//1.2
+
+							}
+							else if (target_obj.name.Contains("Low"))
+							{
+								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 10f);//1.2
+																								//print("low");
+							}
+							else
+							{
+								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 10f);//-1.2
+							}
+
+						}
+
+					}
+
+				}
+			}
+
+
+		}
 		}
 
 
@@ -190,10 +296,12 @@ public class findTarget : MonoBehaviour {
 	
 		if (closest != null) {
 //			print ("closest: "+closest.transform.parent);	
-								carScript = closest.transform.GetComponent<isMove> ();
-			//	print (closest.transform.parent.name+ "  "+ closest.transform.parent.parent.name);
-				closest.transform.GetComponent<AudioSource>().enabled=true;
-				closest.transform.GetComponent<AudioSource>().Play();
+
+			//Commemt Added
+			//					carScript = closest.transform.GetComponent<isMove> ();
+			////	print (closest.transform.parent.name+ "  "+ closest.transform.parent.parent.name);
+			//	closest.transform.GetComponent<AudioSource>().enabled=true;
+			//	closest.transform.GetComponent<AudioSource>().Play();
 
 				}
 	
