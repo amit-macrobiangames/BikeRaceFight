@@ -129,10 +129,6 @@ public class boostercollision : MonoBehaviour {
 			
 								if (transform.name.Contains ("Clock")) {
 										//print ("inside clock");
-									
-												updatedValue = ((100f / (PhycamViews.startedValue + 1)) / 100f);
-												mainCamera.timerFG.fillAmount += updatedValue;
-					
 												PlayerPrefs.SetInt ("timers", (PlayerPrefs.GetInt ("timers") + 1));
 												PlayerPrefs.Save ();
 												PhycamViews.counter = Random.Range (1, 3);
@@ -161,7 +157,9 @@ public class boostercollision : MonoBehaviour {
 					//print ("inside ammo");
 									
 					PlayerPrefs.SetInt ("ammos", (PlayerPrefs.GetInt ("ammos") + 6));
-					PlayerPrefs.Save ();						
+					PlayerPrefs.Save ();
+					player.root.GetComponent<weaponAI>().ammoFG.fillAmount = 6f;
+					player.root.GetComponent<weaponAI>().closeBundle();
 					PhycamViews.counter = Random.Range (1, 3);
 					if(heliLevels)
 						PhycamViews.counter=2;
@@ -176,7 +174,9 @@ public class boostercollision : MonoBehaviour {
 //										mainCamera.changeCamView ();
 										PlayerPrefs.SetInt ("shields", (PlayerPrefs.GetInt ("shields") + 1));
 										PlayerPrefs.Save ();
-								}
+										player.root.GetComponent<weaponAI>().shieldFG.fillAmount = 1f;
+										player.root.GetComponent<weaponAI>().closeBundle();
+				}
 			
 			
 			//			if(transform.name.Contains("stunt"))

@@ -110,7 +110,7 @@ public class searchInapp : MonoBehaviour
             {
                 if (isGamePlay.Equals(true))
                 {
-                    player.root.GetComponent<weaponAI>().ammoFG.fillAmount = 1f;
+                    player.root.GetComponent<weaponAI>().ammoFG.fillAmount = 5f;
                     player.root.GetComponent<weaponAI>().closeBundle();
                 }
             }

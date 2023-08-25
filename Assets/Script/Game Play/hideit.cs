@@ -80,7 +80,7 @@ public class hideit : MonoBehaviour {
 
 			if(!turnLevelcontrols.levelClear && !heavyBikeTurnControls.levelClear)
 			{
-			if (transform.position.z - player.position.z > - 10f && (transform.position.z - player.position.z) <= -05) {
+			if (transform.position.z - player.position.z > - 10f && (transform.position.z - player.position.z) <= -5f) {
 				
 				if (scoreOnce) {
 //					if (levelID == 1) {

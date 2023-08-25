@@ -71,7 +71,7 @@ public class findTarget : MonoBehaviour {
 				
 				//		print (endlessmodeControl.startGame + endlessmodeGraphics.gameMode);
 				if (endlessmodeGraphics.gameMode == "Idle" && handleArrow.start) {
-						if (levelNumber==9) {
+						if (levelNumber==9 || levelNumber == 10) {
 		
 								target_obj = GetTarget ();
 				if (target_obj != null) {
@@ -190,10 +190,10 @@ public class findTarget : MonoBehaviour {
 	
 		if (closest != null) {
 //			print ("closest: "+closest.transform.parent);	
-								carScript = closest.transform.parent.GetComponent<isMove> ();
+								carScript = closest.transform.GetComponent<isMove> ();
 			//	print (closest.transform.parent.name+ "  "+ closest.transform.parent.parent.name);
-				closest.transform.parent.GetComponent<AudioSource>().enabled=true;
-				closest.transform.parent.GetComponent<AudioSource>().Play();
+				closest.transform.GetComponent<AudioSource>().enabled=true;
+				closest.transform.GetComponent<AudioSource>().Play();
 
 				}
 	

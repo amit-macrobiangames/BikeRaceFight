@@ -2,6 +2,10 @@
 
 public class carStop : MonoBehaviour
 {
+    //Added
+    public bool isBike;
+    public bool Opposite;
+
     public static bool setBrakeValue;
     isMove script;
     public AudioClip brakeSound;
@@ -220,15 +224,30 @@ public class carStop : MonoBehaviour
                             //	rotate = true;
 
                             transform.parent.GetComponent<AudioSource>().Pause();
-                            transform.parent.GetComponent<oppositeCar>().translate = false;
-                            transform.parent.GetComponent<oppositeCar>().rotateTire = false;
-                            // pc.emit = false;//khuram
+                            if(!isBike)
+                            {
+                                transform.parent.GetComponent<isMove>().opposite = true;
+                                isMove.rotateTire = true;
+                            }
+                            else if(isBike)
+                            {
+                                transform.parent.parent.GetComponent<isMove>().opposite = true;
+                                isMove.rotateTire = true;
+                            }
+                            else
+                            {
+                                transform.parent.parent.GetComponent<isMove>().opposite = true;
+                                isMove.rotateTire = true;
+                            }
 
-                            if (twoCars)
+                        }
+                        // pc.emit = false;//khuram
+
+                        if (twoCars)
                             {
                                 // pc1.emit = false;//khuram
                             }
-                        }
+                        
                     }
                     Invoke("smokeOff", 0.75f);
 

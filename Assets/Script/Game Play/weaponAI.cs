@@ -73,6 +73,7 @@ public class weaponAI : MonoBehaviour
 
     void Awake()
     {
+
         //PlayerPrefs.SetInt ("pistolSelect",2);
         //	print ("pistol: "+PlayerPrefs.GetInt("pistolSelect"));
         boostBundleOpened = false;
@@ -84,6 +85,7 @@ public class weaponAI : MonoBehaviour
 
         startedValue = PlayerPrefs.GetInt("boosts");
         shieldStartV = PlayerPrefs.GetInt("shieds");
+        ammoStartV = PlayerPrefs.GetInt("ammos");
         if (startedValue == 0)
         {
             boostFG.fillAmount = 0;
@@ -103,8 +105,10 @@ public class weaponAI : MonoBehaviour
         }
         else
             carHitText.transform.parent.gameObject.SetActive(false);
+
         updatedValue = 0.0f;
         shieldUpdateV = 0.0f;
+        ammoUpdateV = 0.0f;
         layerMask = 1 << 8;
         if (levelID == 13)
             noOfCarsHit = 10;
@@ -483,6 +487,10 @@ public class weaponAI : MonoBehaviour
     }
     void Start()
     {
+        if(PlayerPrefs.GetInt("shields") != 0)
+        {
+            shieldFG.fillAmount = 1f;
+        }
 
         labelStyle.fontSize = System.Convert.ToInt32(Screen.width * 0.025f);
         if (levelID.Equals(7) || levelID.Equals(8) || levelID.Equals(20) || levelID.Equals(18))
@@ -532,7 +540,7 @@ public class weaponAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.V))
+        if (Input.GetKey(KeyCode.V))
         {
             shieldBtnClicked();
         }
@@ -559,7 +567,9 @@ public class weaponAI : MonoBehaviour
         if (pistolSelected == 2)
             bullets.text = PlayerPrefs.GetInt("missile") + System.String.Empty;
         else
+        {
             bullets.text = PlayerPrefs.GetInt("ammos") + System.String.Empty;
+        }
 
         carHitText.text = noOfCarsHit.ToString();
         if (unstable || crash)
@@ -624,6 +634,8 @@ public class weaponAI : MonoBehaviour
                             isPistolAttack = true;
                             turnPlayerOff();
                             pistolAttack();
+                            ammoUpdateV = (((100f / ammoStartV) / 100f));
+                            ammoFG.fillAmount -= ammoUpdateV;
                             pistolAttackOnce = false;
                         }
                         else
@@ -631,6 +643,8 @@ public class weaponAI : MonoBehaviour
                             ammoPanel.SetActive(true);
                             ammoBundleOpened = true;
                             CashBgStatus(true);
+                            ammoUpdateV = (((100f / ammoStartV) / 100f));
+                            ammoFG.fillAmount -= ammoUpdateV;
                             Time.timeScale = 0f;
                         }
 
@@ -646,6 +660,8 @@ public class weaponAI : MonoBehaviour
                         isShotgunAttack = true;
                         turnPlayerOff();
                         shotgunAttack();
+                        //ammoUpdateV = (((100f / ammoStartV) / 100f));
+                        //ammoFG.fillAmount -= ammoUpdateV;
                         shotgunAttackOnce = false;
                     }
                 }
@@ -662,7 +678,6 @@ public class weaponAI : MonoBehaviour
                     }
                 }
             }
-
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -670,7 +685,6 @@ public class weaponAI : MonoBehaviour
             isShotgunAttack = true;
             turnPlayerOff();
             shotgunAttack();
-
         }
 
 
@@ -1802,6 +1816,7 @@ public class weaponAI : MonoBehaviour
     {
         startedValue = PlayerPrefs.GetInt("boosts");
         shieldStartV = PlayerPrefs.GetInt("shields");
+        ammoStartV = PlayerPrefs.GetInt("ammos");
         shieldBundleOpened = false;
         missileBundleOpened = false;
         missilePanel.SetActive(false);
@@ -1896,8 +1911,6 @@ public class weaponAI : MonoBehaviour
                     resetAll();
                     isPistolAttack = true;
                     turnPlayerOff();
-                    ammoUpdateV = (((100f / ammoStartV) / 100f));
-                    ammoFG.fillAmount -= ammoUpdateV;
                     pistolAttack();
                     pistolAttackOnce = false;
                 }
@@ -1923,8 +1936,6 @@ public class weaponAI : MonoBehaviour
                     resetAll();
                     isShotgunAttack = true;
                     turnPlayerOff();
-                    //ammoUpdateV = (((100f / ammoStartV) / 100f));
-                    //ammoFG.fillAmount -= ammoUpdateV;
                     shotgunAttack();
                     shotgunAttackOnce = false;
                 }

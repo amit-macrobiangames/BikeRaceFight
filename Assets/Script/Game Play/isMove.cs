@@ -4,11 +4,11 @@ using System.Collections;
 public class isMove : MonoBehaviour {
 	Transform player;
 	Vector3 pos;
-	//public bool bikerAhead;
-	public static bool rotateTire;
+    public bool bikerAhead;
+    public static bool rotateTire;
 	public Transform WheelFL,wheelRL,wheelFR,wheelRR;
 	int carWheelType;
-	bool opposite;
+	public bool opposite;
 	Transform oppositeCarToMove;
 	bool bike,low;
 
@@ -65,6 +65,7 @@ public class isMove : MonoBehaviour {
 
 		if(bike)
 			{
+				transform.Translate(Time.fixedDeltaTime * 50f, 0, 0f);
 				WheelFL.Rotate(0,0,400*Time.deltaTime);	
 				wheelRL.Rotate(0,0,400*Time.deltaTime);	
 				wheelRR.Rotate(0,0,400*Time.deltaTime);	
@@ -73,7 +74,7 @@ public class isMove : MonoBehaviour {
 			}
 			else if (low )
 			{
-			
+				transform.Translate(Time.fixedDeltaTime * 50f, 0, 0);
 				WheelFL.Rotate(0,0,200*Time.deltaTime);	
 				wheelRL.Rotate(0,0,200*Time.deltaTime);	
 				wheelRR.Rotate(0,0,200*Time.deltaTime);	
@@ -82,7 +83,8 @@ public class isMove : MonoBehaviour {
 			}
 			else
 			{
-			WheelFL.Rotate(200*Time.deltaTime,0,0);	
+				transform.Translate(0.0f, 0, -Time.fixedDeltaTime * 50f);
+				WheelFL.Rotate(200*Time.deltaTime,0,0);	
 			wheelRL.Rotate(200*Time.deltaTime,0,0);	
 			wheelRR.Rotate(200*Time.deltaTime,0,0);	
 			wheelFR.Rotate(200*Time.deltaTime,0,0);	
@@ -98,31 +100,33 @@ public class isMove : MonoBehaviour {
 
 	}
 
-//	void OnTriggerEnter(Collider col)
-//	{
-//		if (col.name.Contains ("carTrigger")) {
-//			int random=Random.Range(0,6);
-//			if(random%2==0)
-//			{
-//				findTarget.carBrake=true;
-//			}
-//			else
-//			{
-//				findTarget.carBrake=false;
-//
-//			}
-//		}
-//		print (findTarget.carBrake);
-//	}
-//	void OnCollisionEnter(Collision col)
-//	{
-//		if (col.transform.tag.Contains ("Opponent")) {
-//			bikerAhead=true;
-//			Invoke("startAfterBiker",1.5f);
-//		}
-//	}
-//	void startAfterBiker()
-//	{
-//		bikerAhead = false;
-//	}
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.name.Contains("carTrigger"))
+        {
+            int random = Random.Range(0, 6);
+            if (random % 2 == 0)
+            {
+                findTarget.carBrake = true;
+            }
+            else
+            {
+                findTarget.carBrake = false;
+
+            }
+        }
+        print(findTarget.carBrake);
+    }
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.transform.tag.Contains("Opponent"))
+        {
+            bikerAhead = true;
+            Invoke("startAfterBiker", 1.5f);
+        }
+    }
+    void startAfterBiker()
+    {
+        bikerAhead = false;
+    }
 }
