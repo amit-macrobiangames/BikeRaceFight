@@ -214,7 +214,7 @@ public class findTarget : MonoBehaviour {
 							if (target_obj.name.Equals("heavybike"))
 							{
 
-								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 10f);//1.2
+								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 5f);//1.2
 
 							}
 							else if (target_obj.name.Contains("Low"))
@@ -224,7 +224,7 @@ public class findTarget : MonoBehaviour {
 							}
 							else
 							{
-								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 10f);//-1.2
+								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 5f);//-1.2
 							}
 
 						}
@@ -243,17 +243,17 @@ public class findTarget : MonoBehaviour {
 							if (target_obj.name.Equals("heavybike"))
 							{
 
-								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 10f);//1.2
+								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 5f);//1.2
 
 							}
 							else if (target_obj.name.Contains("Low"))
 							{
-								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 10f);//1.2
+								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 5f);//1.2
 																								//print("low");
 							}
 							else
 							{
-								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 10f);//-1.2
+								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 5f);//-1.2
 							}
 
 						}

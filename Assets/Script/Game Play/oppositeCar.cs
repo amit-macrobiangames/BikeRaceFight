@@ -45,7 +45,7 @@ void Update () {
 		if (transform.position.z - player.position.z <= - 10f) {
 //			print ("inside");
 			//Destroy (transform.gameObject);
-			transform.localPosition = pos;
+			//transform.localPosition = pos;
 			rotateTire=false;
 			GetComponent<AudioSource>().Pause ();
 			GetComponent<AudioSource>().enabled = false;
