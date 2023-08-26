@@ -85,7 +85,7 @@ void Update () {
 			}
 			else
 			{
-				transform.Translate(0, 0, Time.fixedDeltaTime * 10f);
+				transform.Translate(Time.fixedDeltaTime * 10f, 0,0);
 				WheelFL.Rotate(200*Time.deltaTime,0,0);	
 				wheelRL.Rotate(200*Time.deltaTime,0,0);	
 				wheelRR.Rotate(200*Time.deltaTime,0,0);	

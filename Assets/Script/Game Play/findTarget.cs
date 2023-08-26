@@ -168,7 +168,7 @@ public class findTarget : MonoBehaviour {
 				target_obj = GetTarget();
 				if (target_obj != null)
 				{
-					target_obj = target_obj.transform.parent.gameObject;
+					target_obj = target_obj.transform.gameObject;
 
 
 					dist = Vector3.Distance(target_obj.transform.position, transform.position);
@@ -253,7 +253,7 @@ public class findTarget : MonoBehaviour {
 							}
 							else
 							{
-								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 5f);//-1.2
+								target_obj.transform.Translate(0, 0, -Time.fixedDeltaTime * 1f);//-1.2
 							}
 
 						}

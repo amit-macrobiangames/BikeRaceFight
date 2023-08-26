@@ -117,6 +117,7 @@ public class weaponAI : MonoBehaviour
         //PlayerPrefs.SetInt ("batSelect",0);
 
         batSelected = PlayerPrefs.GetInt("batSelect");
+        
         //		print ("batselected: "+ batSelected);
         //	batSelected = 0;
         if (batSelected == 0 || batSelected == 2)
@@ -566,7 +567,7 @@ public class weaponAI : MonoBehaviour
         }
         if (pistolSelected == 2)
             bullets.text = PlayerPrefs.GetInt("missile") + System.String.Empty;
-        else
+        
         {
             bullets.text = PlayerPrefs.GetInt("ammos") + System.String.Empty;
         }
@@ -685,6 +686,8 @@ public class weaponAI : MonoBehaviour
             isShotgunAttack = true;
             turnPlayerOff();
             shotgunAttack();
+            ammoUpdateV = (((100f / ammoStartV) / 100f));
+            ammoFG.fillAmount -= ammoUpdateV;
         }
 
 

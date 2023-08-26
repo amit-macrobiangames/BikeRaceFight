@@ -91,7 +91,7 @@ public class isMove : MonoBehaviour {
 			}
 			if(opposite)
 			{
-				oppositeCarToMove.GetComponent<oppositeCar>().translate=true;
+				//oppositeCarToMove.GetComponent<oppositeCar>().translate=true;
 				opposite=false;
 			}
 
