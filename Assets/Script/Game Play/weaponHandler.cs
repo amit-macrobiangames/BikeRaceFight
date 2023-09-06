@@ -84,14 +84,12 @@ public class weaponHandler : MonoBehaviour
         {
             foreach (Image childs in batBarImage)
             {
-
                 childs.color = white;
             }
             //			print ("color: "+PlayerPrefs.GetString("batColor"));
             if (PlayerPrefs.GetString("batColor").Contains("blue"))
             {
                 batBarImage[1].color = green;
-
             }
             else if (PlayerPrefs.GetString("batColor").Contains("red"))
             {
@@ -101,22 +99,16 @@ public class weaponHandler : MonoBehaviour
             else if (PlayerPrefs.GetString("batColor").Contains("yellow"))
             {
                 batBarImage[3].color = green;
-
             }
-
-
         }
+
         if (PlayerPrefs.GetInt("pistolSelect") == 1)
         {
             foreach (Image childs in pistolBarImage)
             {
-
                 childs.color = white;
-
             }
             pistolBarImage[1].transform.parent.parent.Find("shot gun").transform.GetChild(0).GetComponent<Image>().color = green;
-
-
         }
         else if (PlayerPrefs.GetInt("pistolSelect") == 0)
         {
@@ -127,8 +119,6 @@ public class weaponHandler : MonoBehaviour
 
             }
             pistolBarImage[0].transform.parent.parent.Find("pistol").transform.GetChild(0).GetComponent<Image>().color = green;
-
-
         }
         else if (PlayerPrefs.GetInt("pistolSelect") == 2)
         {
@@ -139,12 +129,7 @@ public class weaponHandler : MonoBehaviour
 
             }
             pistolBarImage[2].transform.parent.parent.Find("missile").transform.GetChild(0).GetComponent<Image>().color = green;
-
-
         }
-
-
-
     }
 
     public void startbarColor(Image[] parentBar)
@@ -267,6 +252,7 @@ public class weaponHandler : MonoBehaviour
             blueBikeLock.enabled = true;
             blueHarleyLock.enabled = true;
         }
+
         if (PlayerPrefs.GetString("greyPurchased").Equals("true"))
         {
             greyBikeLock.enabled = false;
@@ -281,13 +267,12 @@ public class weaponHandler : MonoBehaviour
         if (PlayerPrefs.GetString("blackPurchased").Equals("true"))
         {
             blackBikeLock.enabled = false;
-
         }
         else
         {
             blackBikeLock.enabled = true;
-
         }
+
         if (PlayerPrefs.GetString("orangePurchased").Equals("true"))
         {
             orangeHarleyLock.enabled = false;
@@ -298,6 +283,7 @@ public class weaponHandler : MonoBehaviour
             orangeHarleyLock.enabled = true;
 
         }
+
         if (PlayerPrefs.GetString("redPurchased").Equals("true"))
         {
             redBikeLock.enabled = false;
