@@ -77,7 +77,7 @@ public class Common : MonoBehaviour
 		{"playerbat3locked","yes"},
 		{"playerbat4locked","yes"},
 
-		{"playerpistol0locked","no"},
+		{"playerpistol0locked","yes"},
 		{"playerpistol1locked","yes"},
 		{"playerpistol2locked","yes"},
 

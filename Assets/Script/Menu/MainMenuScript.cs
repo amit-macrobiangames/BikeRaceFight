@@ -185,6 +185,12 @@ public class MainMenuScript : MonoBehaviour
     void Start()
     {
         Instance = this;
+
+        if(!PlayerPrefs.HasKey("level0locked"))
+            Common.savePlayerData();
+
+        Common.getPlayerData();
+
         foreach(Text t in UpdateCashText)
         {
             t.text = cashText.text;

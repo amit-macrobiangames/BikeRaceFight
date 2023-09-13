@@ -6,6 +6,9 @@ public class weaponHandler : MonoBehaviour
     //Add for UI
     public GameObject NextButton;
     public GameObject CancelBtn;
+    public GameObject BackButton;
+
+    public int PlayerCostumeNum, PlayerBikeColorNum;
 
     public bool checker;
     public Image damage, range;
@@ -17,11 +20,9 @@ public class weaponHandler : MonoBehaviour
     bool startAnimatingCash;
     int updatedCash;
     public Text cash;
-    public Image[] shirtsLock;
-    public Image axeLock, batBlueLock, batRedLock, batYellowLock, shotgunLock, pistolLock, missileLock;
-    public Image[] batBarImage, pistolBarImage, heavybikeBarImage, bikerBarImage, harleybikeBarImage;
-    //public Sprite yellowBatFree, blueBatFree, redBatFree, axeFree, shotGunFree,pistolFree,missileFree;
-    //public Sprite yellowBatPurchase, blueBatPurchase, redBatPurchase, axePurchase, shotGunPurchase,pistolPurchase,missilePurchase;
+
+    public Sprite yellowBatFree, blueBatFree, redBatFree, axeFree, shotGunFree,pistolFree,missileFree;
+    public Sprite yellowBatPurchase, blueBatPurchase, redBatPurchase, axePurchase, shotGunPurchase,pistolPurchase,missilePurchase;
     public Text priceText;
     public GameObject cart;
     public GameObject startBtn, buyItem;
@@ -31,9 +32,16 @@ public class weaponHandler : MonoBehaviour
     EventSystem currentBtn;
     public Color green, white;
     string selectedObjectName;
-    public Image greyBikeLock, redBikeLock, blueBikeLock, blackBikeLock;
-    public Image greyHarleyLock, redHarleyLock, blueHarleyLock, orangeHarleyLock;
+    //public Image greyBikeLock, redBikeLock, blueBikeLock, blackBikeLock;
+    //public Image greyHarleyLock, redHarleyLock, blueHarleyLock, orangeHarleyLock;
 
+    public Image[] harleyBikeColorsLock, heavyBikeColorsLock;
+
+    public Image[] PlayerCostumeLock;
+
+    public Image[] PlayerbatLock;
+
+    public Image[] PlayerPistolLock;
     //public Sprite shirt10Free,shirt2Free, shirt3Free,shirt4Free, shirt5Free,shirt6Free,shirt7Free,shirt8Free,shirt9Free;
     //public Sprite shirt10Purchase,shirt2Purchase,shirt3Purchase,shirt4Purchase,shirt5Purchase,shirt6Purchase,shirt7Purchase,shirt8Purchase,shirt9Purchase;
     void Awake()
@@ -71,65 +79,7 @@ public class weaponHandler : MonoBehaviour
 
         resetTexture();
         //startbarColor(heavybikeBarImage);
-        bikerbarColor(bikerBarImage);
-        if (PlayerPrefs.GetInt("batSelect") == 1)
-        {
-            foreach (Image childs in batBarImage)
-            {
-                childs.color = white;
-            }
-            batBarImage[0].transform.parent.parent.Find("axe").transform.GetChild(0).GetComponent<Image>().color = green;
-        }
-        else if (PlayerPrefs.GetInt("batSelect") == 2)
-        {
-            foreach (Image childs in batBarImage)
-            {
-                childs.color = white;
-            }
-            //			print ("color: "+PlayerPrefs.GetString("batColor"));
-            if (PlayerPrefs.GetString("batColor").Contains("blue"))
-            {
-                batBarImage[1].color = green;
-            }
-            else if (PlayerPrefs.GetString("batColor").Contains("red"))
-            {
-                batBarImage[2].color = green;
 
-            }
-            else if (PlayerPrefs.GetString("batColor").Contains("yellow"))
-            {
-                batBarImage[3].color = green;
-            }
-        }
-
-        if (PlayerPrefs.GetInt("pistolSelect") == 1)
-        {
-            foreach (Image childs in pistolBarImage)
-            {
-                childs.color = white;
-            }
-            pistolBarImage[1].transform.parent.parent.Find("shot gun").transform.GetChild(0).GetComponent<Image>().color = green;
-        }
-        else if (PlayerPrefs.GetInt("pistolSelect") == 0)
-        {
-            foreach (Image childs in pistolBarImage)
-            {
-
-                childs.color = white;
-
-            }
-            pistolBarImage[0].transform.parent.parent.Find("pistol").transform.GetChild(0).GetComponent<Image>().color = green;
-        }
-        else if (PlayerPrefs.GetInt("pistolSelect") == 2)
-        {
-            foreach (Image childs in pistolBarImage)
-            {
-
-                childs.color = white;
-
-            }
-            pistolBarImage[2].transform.parent.parent.Find("missile").transform.GetChild(0).GetComponent<Image>().color = green;
-        }
     }
 
     public void startbarColor(Image[] parentBar)
@@ -175,124 +125,136 @@ public class weaponHandler : MonoBehaviour
         //		print ("preference: "+PlayerPrefs.GetString ("pistolPurchased"));
         if (PlayerPrefs.GetString("axePurchased").Equals("true"))
         {
-            axeLock.enabled = false;
+            PlayerbatLock[4].enabled = false;
         }
         else
         {
-            axeLock.enabled = true;
+            PlayerbatLock[4].enabled = true;
         }
         if (PlayerPrefs.GetString("yellowBatPurchased").Equals("true"))
         {
-            batYellowLock.enabled = false;
+            PlayerbatLock[1].enabled = false;
         }
         else
         {
-            batYellowLock.enabled = true;
+            PlayerbatLock[1].enabled = true;
         }
         if (PlayerPrefs.GetString("blueBatPurchased").Equals("true"))
         {
-            batBlueLock.enabled = false;
+            PlayerbatLock[3].enabled = false;
         }
         else
         {
-            batBlueLock.enabled = true;
+            PlayerbatLock[3].enabled = true;
         }
         if (PlayerPrefs.GetString("redBatPurchased").Equals("true"))
         {
-            batRedLock.enabled = false;
+            PlayerbatLock[2].enabled = false;
         }
         else
         {
-            batRedLock.enabled = true;
+            PlayerbatLock[2].enabled = true;
         }
         if (PlayerPrefs.GetString("shotgunPurchased").Equals("true"))
         {
-            shotgunLock.enabled = false;
+            PlayerPistolLock[1].enabled = false;
         }
         else
         {
-            shotgunLock.enabled = true;
+            PlayerPistolLock[1].enabled = true;
         }
         if (PlayerPrefs.GetString("pistolPurchased").Equals("true"))
         {
-            pistolLock.enabled = false;
+            PlayerPistolLock[0].enabled = false;
         }
         else
         {
-            pistolLock.enabled = true;
+            PlayerPistolLock[0].enabled = true;
         }
         if (PlayerPrefs.GetString("missilePurchased").Equals("true"))
         {
-            missileLock.enabled = false;
+            PlayerPistolLock[2].enabled = false;
         }
         else
         {
-            missileLock.enabled = true;
+            PlayerPistolLock[2] .enabled = true;
         }
-        int sLength = shirtsLock.Length;
+        
+        for(int i = 0; i < Common.totalPlayerCostumes; i++)
+        {
+            if(Common.getGameDictionaryData("player1costume" + i + "locked") == "no")
+            {
+                PlayerCostumeLock[i].enabled = false;
+            }
+            else
+            {
+                PlayerCostumeLock[i].enabled = true;
+            }
+        }
+        int sLength = PlayerCostumeLock.Length;
         for (int i = 1; i <= sLength; i++)
         {
             if (PlayerPrefs.GetString("shirt" + i + "Purchased").Equals("true"))
             {
-                shirtsLock[i - 1].enabled = false;
+                PlayerCostumeLock[i - 1].enabled = false;
+                Common.changeGameDictionary("player1costume" + (i - 1) + "locked", "no");
             }
             else
             {
-                shirtsLock[i - 1].enabled = true;
+                PlayerCostumeLock[i - 1].enabled = true;
+                Common.changeGameDictionary("player1costume" + (i - 1) + "locked", "yes");
             }
         }
 
-        if (PlayerPrefs.GetString("bluePurchased").Equals("true"))
+        for (int i = 0; i < Common.totalPlayerBikeColor; i++)
         {
-            blueBikeLock.enabled = false;
-            blueHarleyLock.enabled = false;
+            Debug.Log(Common.getGameDictionaryData("player1bikecolor" + i + "locked")+" - "+ "player1bikecolor" + i + "locked");
+
+          //Common.changeGameDictionary("player1bikecolor" + i + "locked", "yes"); //For Reference
+
+            if (Common.getGameDictionaryData("player1bikecolor" + i + "locked") == "no") {
+
+                harleyBikeColorsLock[i].enabled = false;
+            }
+            else
+            {
+                harleyBikeColorsLock[i].enabled = true;
+            }
+
+            if (Common.getGameDictionaryData("player2bikecolor" + i + "locked") == "no")
+            {
+
+                heavyBikeColorsLock[i].enabled = false;
+            }
+            else
+            {
+                heavyBikeColorsLock[i].enabled = true;
+            }
         }
-        else
+        
+
+        for(int i=0; i < Common.totalPlayerBat;i++)
         {
-            blueBikeLock.enabled = true;
-            blueHarleyLock.enabled = true;
+            if(Common.getGameDictionaryData("playerbat" + i + "locked") == "no")
+            {
+                PlayerbatLock[i].enabled = false;
+            }
+            else
+            {
+                PlayerbatLock[i].enabled = true;
+            }
         }
 
-        if (PlayerPrefs.GetString("greyPurchased").Equals("true"))
+        for(int i = 0; i < Common.totalPlayerPistol; i++)
         {
-            greyBikeLock.enabled = false;
-            greyHarleyLock.enabled = false;
-        }
-        else
-        {
-            greyBikeLock.enabled = true;
-            greyHarleyLock.enabled = true;
-        }
-
-        if (PlayerPrefs.GetString("blackPurchased").Equals("true"))
-        {
-            blackBikeLock.enabled = false;
-        }
-        else
-        {
-            blackBikeLock.enabled = true;
-        }
-
-        if (PlayerPrefs.GetString("orangePurchased").Equals("true"))
-        {
-            orangeHarleyLock.enabled = false;
-
-        }
-        else
-        {
-            orangeHarleyLock.enabled = true;
-
-        }
-
-        if (PlayerPrefs.GetString("redPurchased").Equals("true"))
-        {
-            redBikeLock.enabled = false;
-            redHarleyLock.enabled = false;
-        }
-        else
-        {
-            redBikeLock.enabled = true;
-            redHarleyLock.enabled = true;
+            if(Common.getGameDictionaryData("playerpistol" + i + "locked") == "no")
+            {
+                PlayerPistolLock[i].enabled = false;
+            }
+            else
+            {
+                PlayerPistolLock[i].enabled = true;
+            }
         }
     }
 
@@ -316,6 +278,7 @@ public class weaponHandler : MonoBehaviour
                 startAnimatingCash = false;
             }
         }
+
     }
     string priceSubstring;
 
@@ -327,6 +290,7 @@ public class weaponHandler : MonoBehaviour
             cart.SetActive(true);
             //startBtn.SetActive (false);
             buyItem.SetActive(true);
+            BackButton.SetActive(false);
             dressPlayer.nextItem.SetActive(false);
 
         }
@@ -335,6 +299,7 @@ public class weaponHandler : MonoBehaviour
             cart.SetActive(false);
             //startBtn.SetActive (true);
             buyItem.SetActive(false);
+            BackButton.SetActive(true);
             dressPlayer.nextItem.SetActive(true);
         }
     }
@@ -348,6 +313,7 @@ public class weaponHandler : MonoBehaviour
             cart.SetActive(true);
             //startBtn.SetActive (false);
             buyItem.SetActive(true);
+            BackButton.SetActive(false);
             dressPlayer.nextItem.SetActive(false);
         }
         else
@@ -355,6 +321,7 @@ public class weaponHandler : MonoBehaviour
             cart.SetActive(false);
             //startBtn.SetActive (true);
             buyItem.SetActive(false);
+            BackButton.SetActive(true);
             dressPlayer.nextItem.SetActive(true);
         }
     }
@@ -369,13 +336,16 @@ public class weaponHandler : MonoBehaviour
             cart.SetActive(true);
             //startBtn.SetActive (false);
             buyItem.SetActive(true);
+            BackButton.SetActive(false);
             dressPlayer.nextItem.SetActive(false);
         }
         else
         {
             cart.SetActive(false);
             //startBtn.SetActive (true);
+
             buyItem.SetActive(false);
+            BackButton.SetActive(true);
             dressPlayer.nextItem.SetActive(true);
         }
     }
@@ -389,6 +359,7 @@ public class weaponHandler : MonoBehaviour
             cart.SetActive(true);
             //startBtn.SetActive (false);
             buyItem.SetActive(true);
+            BackButton.SetActive(false);
             dressPlayer.nextItem.SetActive(false);
         }
         else
@@ -396,6 +367,7 @@ public class weaponHandler : MonoBehaviour
             cart.SetActive(false);
             //startBtn.SetActive (true);
             buyItem.SetActive(false);
+            BackButton.SetActive(true);
             dressPlayer.nextItem.SetActive(true);
         }
     }
@@ -409,50 +381,11 @@ public class weaponHandler : MonoBehaviour
             {
                 PlayerPrefs.SetString("shirtColor", "shirt1");
 
-                foreach (Image childs in bikerBarImage)
-                {
-
-                    childs.color = white;
-
-                }
-                //	print (bikerBarImage[0].transform);
-
-                bikerBarImage[0].color = green;
             }
             if (bikeImage.activeInHierarchy)
             {
                 PlayerPrefs.SetString("bikeColor", "yellow");
-                if (bikeSelection.bikeCount == 1)
-                {
 
-
-                    foreach (Image childs in heavybikeBarImage)
-                    {
-
-                        childs.color = white;
-
-                    }
-
-
-                    heavybikeBarImage[0].color = green;
-                    //currentBtn.currentSelectedGameObject.transform.parent.GetChild (0).GetChild(0).GetComponent<Image> ().color = green;
-                }
-                else
-                {
-
-
-
-                    foreach (Image childs in harleybikeBarImage)
-                    {
-
-                        childs.color = white;
-
-                    }
-
-                    harleybikeBarImage[0].color = green;
-                    //currentBtn.currentSelectedGameObject.transform.parent.GetChild (0).GetChild(0).GetComponent<Image> ().color = green;
-
-                }
             }
             
             dressPlayer.dressCode();
@@ -467,10 +400,11 @@ public class weaponHandler : MonoBehaviour
 
             //startBtn.SetActive (true);
             buyItem.SetActive(false);
+            BackButton.SetActive(true);
             dressPlayer.nextItem.SetActive(true);
             purchasingCostume = false;
             NextButton.SetActive(false);
-
+            BackButton.SetActive(false);
         }
         else if (axePanelPurchasing)
         {
@@ -494,22 +428,7 @@ public class weaponHandler : MonoBehaviour
 
                 dressPlayer.dressCode();
             }
-            foreach (Image childs in heavybikeBarImage)
-            {
 
-                childs.color = white;
-
-            }
-
-            foreach (Image childs in heavybikeBarImage)
-            {
-                //								print (childs.transform.parent.name);
-                if (childs.transform.parent.name.Contains(PlayerPrefs.GetString("bikeColor")))
-                {
-                    childs.color = green;
-                }
-
-            }
             //			if(PlayerPrefs.GetString("shirtColor"))
             //			{
             //
@@ -522,36 +441,9 @@ public class weaponHandler : MonoBehaviour
                 PlayerPrefs.SetString("bikeColor", "orange");
                 dressPlayer.dressCode();
             }
-            foreach (Image childs in harleybikeBarImage)
-            {
-
-                childs.color = white;
-            }
-            foreach (Image childs in harleybikeBarImage)
-            {
-
-                if (childs.transform.parent.name.Contains(PlayerPrefs.GetString("bikeColor")))
-                {
-                    childs.color = green;
-                }
-            }
-        }
-
-        foreach (Image childs in bikerBarImage)
-        {
-
-            childs.color = white;
 
         }
-        foreach (Image childs in bikerBarImage)
-        {
 
-            if (childs.transform.parent.name.Contains(PlayerPrefs.GetString("shirtColor")))
-            {
-                childs.color = green;
-            }
-
-        }
     }
 
     public void bikeClicked(string name)
@@ -573,6 +465,7 @@ public class weaponHandler : MonoBehaviour
                 //startBtn.SetActive (true);
                 dressPlayer.nextItem.SetActive(true);
                 buyItem.SetActive(false);
+                BackButton.SetActive(true);
                 closePurchase.SetActive(false);
                 backBtnImage.SetActive(true);
                 shirtImage.SetActive(true);
@@ -581,6 +474,7 @@ public class weaponHandler : MonoBehaviour
             }
             else
             {
+
                 priceText.text = System.String.Empty + priceSubstring;
                 storeBtnHandlers.lastSelectedBike = System.String.Empty + priceSubstring;
                 closePurchase.SetActive(true);
@@ -592,13 +486,11 @@ public class weaponHandler : MonoBehaviour
                 //startBtn.SetActive (false);
                 dressPlayer.nextItem.SetActive(false);
                 buyItem.SetActive(true);
+                BackButton.SetActive(false);
                 //nextImageBG.sprite= buyImage;	
             }
 
-            if (currentBtn.currentSelectedGameObject.transform.parent.name.Contains("heavy"))
-                barColor(heavybikeBarImage);
-            else
-                barColor(harleybikeBarImage);
+
         }
     }
 
@@ -623,6 +515,7 @@ public class weaponHandler : MonoBehaviour
                 //startBtn.SetActive (true);
                 dressPlayer.nextItem.SetActive(true);
                 buyItem.SetActive(false);
+                BackButton.SetActive(true);
                 //dressPlayer.dressCode(); //khuram
                 closePurchase.SetActive(false);
                 backBtnImage.SetActive(true);
@@ -637,13 +530,14 @@ public class weaponHandler : MonoBehaviour
                 //startBtn.SetActive (false);
                 dressPlayer.nextItem.SetActive(false);
                 buyItem.SetActive(true);
+                BackButton.SetActive(false);
                 closePurchase.SetActive(true);
                 backBtnImage.SetActive(false);
                 //bikeImage.SetActive(false);
                 purchasingCostume = true;
                 //nextImageBG.sprite= buyImage;	
             }
-            barColor(bikerBarImage);
+
         }
     }
     public void freeBatClicked()
@@ -658,8 +552,8 @@ public class weaponHandler : MonoBehaviour
             //startBtn.SetActive (true);
             dressPlayer.nextItem.SetActive(true);
             buyItem.SetActive(false);
+            BackButton.SetActive(true);
             //nextImageBG.sprite= nextImage;
-            barColor(batBarImage);
             closePurchase.SetActive(false);
             backBtnImage.SetActive(true);
             axePanelPurchasing = false;
@@ -684,6 +578,7 @@ public class weaponHandler : MonoBehaviour
                 //startBtn.SetActive (true);
                 dressPlayer.nextItem.SetActive(true);
                 buyItem.SetActive(false);
+                BackButton.SetActive(true);
                 closePurchase.SetActive(false);
                 backBtnImage.SetActive(true);
                 axePanelPurchasing = false;
@@ -697,12 +592,12 @@ public class weaponHandler : MonoBehaviour
                 //startBtn.SetActive (false);
                 dressPlayer.nextItem.SetActive(false);
                 buyItem.SetActive(true);
+                BackButton.SetActive(false);
                 closePurchase.SetActive(true);
                 backBtnImage.SetActive(false);
                 axePanelPurchasing = true;
                 //nextImageBG.sprite= buyImage;	
             }
-            barColor(batBarImage);
         }
     }
 
@@ -714,14 +609,8 @@ public class weaponHandler : MonoBehaviour
         backBtnImage.SetActive(true);
         axePanelPurchasing = false;
         freeBatClicked();
-        foreach (Image childs in batBarImage)
-        {
-
-            childs.color = white;
-
-        }
-        batBarImage[0].color = green;
         NextButton.SetActive(false);
+        BackButton.SetActive(false);
     }
 
     public void BatClicked(string name)
@@ -746,6 +635,7 @@ public class weaponHandler : MonoBehaviour
                 //startBtn.SetActive (true);
                 dressPlayer.nextItem.SetActive(true);
                 buyItem.SetActive(false);
+                BackButton.SetActive(true);
                 closePurchase.SetActive(false);
                 backBtnImage.SetActive(true);
                 axePanelPurchasing = false;
@@ -759,12 +649,12 @@ public class weaponHandler : MonoBehaviour
                 //startBtn.SetActive (false);
                 dressPlayer.nextItem.SetActive(false);
                 buyItem.SetActive(true);
+                BackButton.SetActive(false);
                 closePurchase.SetActive(true);
                 backBtnImage.SetActive(false);
                 axePanelPurchasing = true;
                 //	nextImageBG.sprite= buyImage;	
             }
-            barColor(batBarImage);
 
 
             switch (name)
@@ -798,14 +688,8 @@ public class weaponHandler : MonoBehaviour
         backBtnImage.SetActive(true);
         pistolClicked();
         gunPanelPurchasing = false;
-        foreach (Image childs in pistolBarImage)
-        {
-
-            childs.color = white;
-
-        }
-        pistolBarImage[0].color = green;
         NextButton.SetActive(false);
+        BackButton.SetActive(false);
     }
     public void pistolClicked()
     {
@@ -820,14 +704,13 @@ public class weaponHandler : MonoBehaviour
             //startBtn.SetActive (true);
             dressPlayer.nextItem.SetActive(true);
             buyItem.SetActive(false);
+            BackButton.SetActive(true);
             //	nextImageBG.sprite= nextImage;
-            barColor(pistolBarImage);
             closePurchase.SetActive(false);
             backBtnImage.SetActive(true);
             gunPanelPurchasing = false;
             damage.fillAmount = 0.4f;
             range.fillAmount = 0.3f;
-            barColor(pistolBarImage);
         }
     }
     public void shotGunClicked()
@@ -847,6 +730,7 @@ public class weaponHandler : MonoBehaviour
                 //startBtn.SetActive (true);
                 dressPlayer.nextItem.SetActive(true);
                 buyItem.SetActive(false);
+                BackButton.SetActive(true);
                 //nextImageBG.sprite = nextImage;
                 closePurchase.SetActive(false);
                 backBtnImage.SetActive(true);
@@ -859,13 +743,13 @@ public class weaponHandler : MonoBehaviour
                 cart.SetActive(true);
                 //startBtn.SetActive (false);
                 buyItem.SetActive(true);
+                BackButton.SetActive(false);
                 dressPlayer.nextItem.SetActive(false);
                 //nextImageBG.sprite= buyImage;	
                 closePurchase.SetActive(true);
                 backBtnImage.SetActive(false);
                 gunPanelPurchasing = true;
             }
-            barColor(pistolBarImage);
             //barColor (batBarImage);
         }
     }
@@ -887,6 +771,7 @@ public class weaponHandler : MonoBehaviour
                 //startBtn.SetActive (true);
                 dressPlayer.nextItem.SetActive(true);
                 buyItem.SetActive(false);
+                BackButton.SetActive(true);
                 //nextImageBG.sprite = nextImage;
                 closePurchase.SetActive(false);
                 backBtnImage.SetActive(true);
@@ -900,12 +785,12 @@ public class weaponHandler : MonoBehaviour
                 //startBtn.SetActive (false);
                 dressPlayer.nextItem.SetActive(false);
                 buyItem.SetActive(true);
+                BackButton.SetActive(false);
                 //nextImageBG.sprite= buyImage;	
                 closePurchase.SetActive(true);
                 backBtnImage.SetActive(false);
                 gunPanelPurchasing = true;
             }
-            barColor(pistolBarImage);
             //barColor (batBarImage);
         }
     }
@@ -992,6 +877,7 @@ public class weaponHandler : MonoBehaviour
                 //startBtn.SetActive (true);
                 dressPlayer.nextItem.SetActive(true);
                 buyItem.SetActive(false);
+                BackButton.SetActive(true);
                 resetTexture();
                 cash1 = cash.text + System.String.Empty;
                 cash1 = cash1.Trim();
