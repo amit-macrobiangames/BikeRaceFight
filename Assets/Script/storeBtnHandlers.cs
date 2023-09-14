@@ -147,6 +147,7 @@ public class storeBtnHandlers : MonoBehaviour
             {
                 go.SetActive(false);
             }
+            endlessmodeGraphics.OnHome = false;
         }
         //Added
         if(Input.GetKeyDown(KeyCode.Escape) && levelSelectionActive)

@@ -20,36 +20,26 @@ public class levelScript : MonoBehaviour
     public GameObject LevelLoading, warningBox, loadingSimple;
     bool playClickBool;
     public Image panelParent;
-    void Awake()
-    {
-        //PlayerPrefs.DeleteAll();
-        if (!PlayerPrefs.HasKey("levels"))
-            PlayerPrefs.SetInt("levels", 1);
-
-        if (!PlayerPrefs.HasKey("level1Unlocked"))
-        {
-            PlayerPrefs.SetString("level1Unlocked", "true");
-            PlayerPrefs.SetString("level2Unlocked", "false");
-        }
-        //PlayerPrefs.SetString("level8Unlocked", "true");
-    }
-
     void Start()
     {
         playClickBool = false;
-        /*         for (int i = 1; i < 20; i++)
-                {
-                    PlayerPrefs.SetString("level" + i + "Unlocked","true");
-                    PlayerPrefs.Save();
-                } */
     }
     void OnEnable()
     {
-        levelNumber = PlayerPrefs.GetInt("levels");
-        //Debug.Log("level number: "+levelNumber);
-        if (levelNumber == 0)
-            levelNumber = 1;
+        //if (PlayerPrefs.GetString("level1Unlocked") != "true")
+        //{
+        //    PlayerPrefs.SetString("level1Unlocked", "true");
+        //}
+        if(Common.getGameDictionaryData("level1locked").Equals("yes"))
+        {
+            Common.changeGameDictionary("level1locked","no");
+        }
+        Debug.Log("level number: "+levelNumber);
 
+        if(levelNumber == 0)
+        {
+            levelNumber = 1;
+        }
         levelSelection(levelNumber);
         if (levelNumber <= 2)
         {
@@ -94,18 +84,18 @@ public class levelScript : MonoBehaviour
             levelNameText.text = levelNames[(level - 1)];
             levelDistText.text = levelDistance[(level - 1)];
             //levelRewradText.text = (level * 1000) + System.String.Empty;
-            selectedImg.transform.parent = GameObject.Find(("level" + levelNumber)).transform;
+            selectedImg.transform.parent = GameObject.Find(("level" + (levelNumber))).transform;
             selectedImg.rectTransform.anchoredPosition = new Vector2(0, 0);
 
 
-        //if (PlayerPrefs.GetString("level" + level + "Unlocked").Equals("true"))
-        //{
-        //    playBtn.interactable = true;
-        //}
-        //else
-        //{
-        //    playBtn.interactable = false;
-        //}
+        if (Common.getGameDictionaryData("level" + level + "locked").Equals("no"))
+        {
+            playBtn.interactable = true;
+        }
+        else
+        {
+            playBtn.interactable = false;
+        }
 
     }
     public void LetsGo()
@@ -134,8 +124,10 @@ public class levelScript : MonoBehaviour
                 PlayerPrefs.SetInt("levels", int.Parse(levelNumber.ToString()));
                 PlayerPrefs.Save();
                 LevelLoading.SetActive(true);
+                this.gameObject.SetActive(false);
                 LoadLevel("desert");
-           // }
+                
+            // }
         }
     }
     public void BuyMissileLauncher()

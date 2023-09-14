@@ -550,7 +550,7 @@ public class endlessmodeGraphics : MonoBehaviour
 
         PlayerPrefs.SetInt("score", 0);
 
-
+        
         loadingbar = true;
         //			async = Application.LoadLevelAsync ("desert");
         //			levelname = "desert";
@@ -562,10 +562,14 @@ public class endlessmodeGraphics : MonoBehaviour
         bikeSelection.backToMode = true;
         bikeSelection.backFromLevel = true;
         if (PlayerPrefs.GetInt("levels") < 20)
+        {
             PlayerPrefs.SetInt("levels", PlayerPrefs.GetInt("levels") + 1);
+            Common.changeGameDictionary("level" + (PlayerPrefs.GetInt("levels")) + "locked", "no");
+        }
+
 
         SceneManager.LoadScene("bikeSelectLevel 2");
-     
+        OnHome = true;
     }
     bool tryBoolOnce;
     public GameObject rateUsPanel, feedBackPanel;

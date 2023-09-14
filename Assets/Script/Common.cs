@@ -17,8 +17,8 @@ public class Common : MonoBehaviour
 
 	private static Dictionary<string, string> gameDictionary = new Dictionary<string, string>() {
 
-		{"level0locked","no"},
-		{"level1locked","yes"},
+		
+		{"level1locked","no"},
 		{"level2locked","yes"},
 		{"level3locked","yes"},
 		{"level4locked","yes"},
@@ -37,6 +37,7 @@ public class Common : MonoBehaviour
 		{"level17locked","yes"},
 		{"level18locked","yes"},
 		{"level19locked","yes"},
+		{"level20locked","yes"},
 
 		{"player1costume0locked","no"},
 		{"player1costume1locked","yes"},
@@ -77,7 +78,7 @@ public class Common : MonoBehaviour
 		{"playerbat3locked","yes"},
 		{"playerbat4locked","yes"},
 
-		{"playerpistol0locked","yes"},
+		{"playerpistol0locked","no"},
 		{"playerpistol1locked","yes"},
 		{"playerpistol2locked","yes"},
 

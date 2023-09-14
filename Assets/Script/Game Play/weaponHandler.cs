@@ -42,6 +42,10 @@ public class weaponHandler : MonoBehaviour
     public Image[] PlayerbatLock;
 
     public Image[] PlayerPistolLock;
+
+    public Image[] LevelLock;
+
+    public Text[] LevelText;
     //public Sprite shirt10Free,shirt2Free, shirt3Free,shirt4Free, shirt5Free,shirt6Free,shirt7Free,shirt8Free,shirt9Free;
     //public Sprite shirt10Purchase,shirt2Purchase,shirt3Purchase,shirt4Purchase,shirt5Purchase,shirt6Purchase,shirt7Purchase,shirt8Purchase,shirt9Purchase;
     void Awake()
@@ -61,10 +65,12 @@ public class weaponHandler : MonoBehaviour
         PlayerPrefs.SetString("pistolPurchased", "true");
 
         //PlayerPrefs.SetString("missilePurchased","false");
-        //PlayerPrefs.SetInt ("cash",50000);
+        PlayerPrefs.SetInt ("cash",100000);
         cash.text = PlayerPrefs.GetInt("cash") + System.String.Empty;
         currentBtn = EventSystem.current;
     }
+
+
     void Start()
     {
         dressPlayer.currentShirt = PlayerPrefs.GetString("shirtColor");
@@ -120,67 +126,111 @@ public class weaponHandler : MonoBehaviour
         }
         parentBar[0].transform.parent.parent.Find(PlayerPrefs.GetString("shirtColor")).transform.GetChild(0).GetComponent<Image>().color = green;
     }
-    void resetTexture()
+    public void resetTexture()
     {
         //		print ("preference: "+PlayerPrefs.GetString ("pistolPurchased"));
         if (PlayerPrefs.GetString("axePurchased").Equals("true"))
         {
             PlayerbatLock[4].enabled = false;
+            Common.changeGameDictionary("playerbat4locked", "no");
         }
         else
         {
             PlayerbatLock[4].enabled = true;
+            Common.changeGameDictionary("playerbat4locked", "yes");
+
         }
         if (PlayerPrefs.GetString("yellowBatPurchased").Equals("true"))
         {
             PlayerbatLock[1].enabled = false;
+            Common.changeGameDictionary("playerbat1locked", "no");
         }
         else
         {
             PlayerbatLock[1].enabled = true;
+            Common.changeGameDictionary("playerbat1locked", "yes");
+
         }
         if (PlayerPrefs.GetString("blueBatPurchased").Equals("true"))
         {
             PlayerbatLock[3].enabled = false;
+            Common.changeGameDictionary("playerbat3locked", "no");
+
         }
         else
         {
             PlayerbatLock[3].enabled = true;
+            Common.changeGameDictionary("playerbat3locked", "yes");
+
         }
         if (PlayerPrefs.GetString("redBatPurchased").Equals("true"))
         {
             PlayerbatLock[2].enabled = false;
+            Common.changeGameDictionary("playerbat2locked", "no");
+
         }
         else
         {
             PlayerbatLock[2].enabled = true;
+            Common.changeGameDictionary("playerbat2locked", "yes");
+
         }
         if (PlayerPrefs.GetString("shotgunPurchased").Equals("true"))
         {
             PlayerPistolLock[1].enabled = false;
+            Common.changeGameDictionary("playerpistol1locked", "no");
         }
         else
         {
             PlayerPistolLock[1].enabled = true;
+            Common.changeGameDictionary("playerpistol1locked", "yes");
+
         }
         if (PlayerPrefs.GetString("pistolPurchased").Equals("true"))
         {
             PlayerPistolLock[0].enabled = false;
+            Common.changeGameDictionary("playerpistol0locked", "no");
+
         }
         else
         {
             PlayerPistolLock[0].enabled = true;
+            Common.changeGameDictionary("playerpistol0locked", "yes");
+
         }
         if (PlayerPrefs.GetString("missilePurchased").Equals("true"))
         {
             PlayerPistolLock[2].enabled = false;
+            Common.changeGameDictionary("playerpistol2locked", "no");
+
         }
         else
         {
             PlayerPistolLock[2] .enabled = true;
+            Common.changeGameDictionary("playerpistol2locked", "yes");
+
         }
-        
-        for(int i = 0; i < Common.totalPlayerCostumes; i++)
+
+
+        if(PlayerPrefs.GetString("greyPurchased").Equals("true"))
+        {
+            Common.changeGameDictionary("player1bikecolor1locked", "no");
+            Common.changeGameDictionary("player2bikecolor1locked", "no");
+        }
+        if (PlayerPrefs.GetString("bluePurchased").Equals("true"))
+        {
+            Common.changeGameDictionary("player1bikecolor2locked", "no");
+            Common.changeGameDictionary("player2bikecolor2locked", "no");
+        }
+        if (PlayerPrefs.GetString("redPurchased").Equals("true"))
+        {
+            Common.changeGameDictionary("player1bikecolor3locked", "no");
+            Common.changeGameDictionary("player2bikecolor3locked", "no");
+        }
+
+
+
+        for (int i = 0; i < Common.totalPlayerCostumes; i++)
         {
             if(Common.getGameDictionaryData("player1costume" + i + "locked") == "no")
             {
@@ -198,11 +248,13 @@ public class weaponHandler : MonoBehaviour
             {
                 PlayerCostumeLock[i - 1].enabled = false;
                 Common.changeGameDictionary("player1costume" + (i - 1) + "locked", "no");
+                //Common.changeGameDictionary("player2costume" + (i - 1) + "locked", "no");
             }
             else
             {
                 PlayerCostumeLock[i - 1].enabled = true;
                 Common.changeGameDictionary("player1costume" + (i - 1) + "locked", "yes");
+                //Common.changeGameDictionary("player2costume" + (i - 1) + "locked", "yes");
             }
         }
 
@@ -254,6 +306,32 @@ public class weaponHandler : MonoBehaviour
             else
             {
                 PlayerPistolLock[i].enabled = true;
+            }
+        }
+
+        //For Level Lock
+
+        for(int i = 1; i <= LevelLock.Length; i++)
+        {
+            if (Common.getGameDictionaryData("level" + i + "locked") == "no")
+            {
+                LevelLock[i-1].enabled = false;
+            }
+            else
+            {
+                LevelLock[i-1].enabled = true;
+            }
+        }
+
+        for(int i = 1; i <= LevelText.Length; i++)
+        {
+            if(Common.getGameDictionaryData("level" + i + "locked") == "no")
+            {
+                LevelText[i-1].enabled = true;
+            }
+            else
+            {
+                LevelText[i-1].enabled = false;
             }
         }
     }
@@ -449,7 +527,7 @@ public class weaponHandler : MonoBehaviour
     public void bikeClicked(string name)
     {
         if (!insufficientPanelActive)
-        {
+        { 
             priceSubstring = name.Substring(name.LastIndexOf(',') + 1);
             name = name.Substring(0, name.IndexOf(","));
             selectedObjectName = name;
@@ -487,7 +565,7 @@ public class weaponHandler : MonoBehaviour
                 dressPlayer.nextItem.SetActive(false);
                 buyItem.SetActive(true);
                 BackButton.SetActive(false);
-                //nextImageBG.sprite= buyImage;	
+                //nextImageBG.sprite= buyImage;
             }
 
 
@@ -871,6 +949,26 @@ public class weaponHandler : MonoBehaviour
                 {
                     //print ("inside Bat");
                     PlayerPrefs.SetInt("ownBikeCostume", (PlayerPrefs.GetInt("ownBikeCostume") + 1));
+
+
+                    /*if(selectedObjectName.Contains("grey"))
+                    {
+                        Common.changeGameDictionary("player1bikecolor1locked", "no");
+                        Common.changeGameDictionary("player2bikecolor1locked", "no");
+
+                    }
+                    if (selectedObjectName.Contains("blue"))
+                    {
+                        Common.changeGameDictionary("player1bikecolor2locked", "no");
+                        Common.changeGameDictionary("player2bikecolor2locked", "no");
+
+                    }
+                    if (selectedObjectName.Contains("red"))
+                    {
+                        Common.changeGameDictionary("player1bikecolor3locked", "no");
+                        Common.changeGameDictionary("player2bikecolor3locked", "no");
+
+                    }*/
                     PlayerPrefs.SetString("bikeColor", selectedObjectName);
                     dressPlayer.dressCode();
                 }

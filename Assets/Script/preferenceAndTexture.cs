@@ -6,16 +6,12 @@ public class preferenceAndTexture : MonoBehaviour
 
     public Color orange, green;
 
+    public int LevelNum;
     //public string preferenceName;
-    string levelUnlocked, preferenceName;
     string levelNumber;
-    int levelNumberINT;
     // Use this for initialization
     void Start()
     {
-        if (!PlayerPrefs.HasKey("level1Unlocked"))
-            PlayerPrefs.SetString("level1Unlocked", "true");
-
         //		PlayerPrefs.SetString ("level16Unlocked","true");
         //		PlayerPrefs.SetString ("level15Unlocked","true");
         //		PlayerPrefs.SetString("level13Unlocked","true");
@@ -39,31 +35,31 @@ public class preferenceAndTexture : MonoBehaviour
         //				PlayerPrefs.SetString("level16Unlocked","true");
 
 
-        levelNumber = (transform.name.ToString()).Remove(0, 5);
-        levelNumberINT = System.Int32.Parse(levelNumber);
+
         //		print (levelNumber+ "  "+ transform.name);
-        preferenceName = transform.name + "Unlocked";
-        levelUnlocked = PlayerPrefs.GetString(preferenceName);
 
 
 
+        levelNumber = this.transform.name;
 
-        if (levelUnlocked.Equals("true"))
+
+        if (Common.getGameDictionaryData(this.transform.name + "locked").Equals("no"))
         {
-            transform.Find("Lock").gameObject.SetActive(false);
+            //transform.Find("Lock").gameObject.SetActive(false); //Added//
             transform.Find("Ring").gameObject.SetActive(true);
 
-            if (PlayerPrefs.GetString("level" + (levelNumberINT + 1) + "Unlocked").Equals("true"))
-                transform.Find("Ring").GetComponent<Image>().color = green;
-            //transform.Find ("Ring").GetComponent<Renderer>().material.SetColor("_Color", green);
-            else if (!PlayerPrefs.GetString("level" + (levelNumberINT + 1) + "Unlocked").Equals("true"))
+
+            if (Common.getGameDictionaryData("level" + (LevelNum+1) + "locked").Equals("yes"))
                 //transform.Find ("Ring").GetComponent<Renderer>().material.SetColor("_Color", orange);
                 transform.Find("Ring").GetComponent<Image>().color = orange;
+            else if (Common.getGameDictionaryData(levelNumber + "locked").Equals("no"))
+                transform.Find("Ring").GetComponent<Image>().color = green;
+            //transform.Find ("Ring").GetComponent<Renderer>().material.SetColor("_Color", green);
 
         }
         else
         {
-            transform.Find("Lock").gameObject.SetActive(true);
+            //transform.Find("Lock").gameObject.SetActive(true); //Added//
             transform.Find("Ring").gameObject.SetActive(false);
         }
 
